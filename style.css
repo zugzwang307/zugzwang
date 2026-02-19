@@ -1,0 +1,1214 @@
+/* Сброс стилей и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background-color: #1D1D1D;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.page-container {
+    width: 1397px;
+    margin: 0 auto;
+    padding: 0 0px;
+    box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1397px;
+  padding: 24px 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(29, 29, 29, 0.9);
+  backdrop-filter: blur(20px);
+  z-index: 10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #d2d2d2;
+  font-family: "Jersey 10", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 32px;
+  line-height: 1;
+  text-transform: lowercase;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.header-link:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.header-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.download-cv:hover,
+.telegram:hover {
+    opacity: 0.7;
+}
+
+.arrow-down,
+.arrow-up {
+    font-size: 14px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 140px 0px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+}
+
+.title-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 8px;
+}
+
+.title-first {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    font-size: 100px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+}
+
+.text-card {
+    position: relative;
+    width: 895px;
+    height: 481px;
+    background: #242424;
+    border-radius: 60px;
+    padding: 60px 78px 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 19px,
+            rgba(29, 29, 29, 0.8) 19px,
+            rgba(29, 29, 29, 0.8) 21px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 19px,
+            rgba(29, 29, 29, 0.8) 19px,
+            rgba(29, 29, 29, 0.8) 21px
+        );
+    background-size: 20px 20px;
+}
+
+.hero-title {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    font-size: 104px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px 0;
+    color: #FFFFFF;
+}
+
+.badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 201px;
+  height: 85px;
+  background: rgba(81, 255, 1, 0.25);
+  backdrop-filter: blur(20px);
+  border-radius: 84px;
+  transform: rotate(9.94deg) translateY(-12px);
+  box-shadow: 0 0 60px rgba(81, 255, 1, 0.239),
+              inset 0 0 40px rgba(81, 255, 1, 0.2);
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
+  font-size: 29px;
+  line-height: 1.1;
+  color: #51ff01;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+
+.hero-description {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 740px;
+    margin: 0;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: none;
+}
+
+.hero-image {
+    flex-shrink: 0;
+    width: 480px;
+    height: 480px;
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Cases Section */
+.cases {
+  margin-top: 100px;
+  padding: 0 0 80px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cases-title {
+  font-family: 'Rubik', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.case-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+ .case-section--hero {
+    max-width: 1392px;
+    margin: 16px auto 24px; /* небольшой отступ после крошек */
+    height: 640px;           /* убираем фикс 640px */
+    border-radius: 32px;
+    overflow: hidden;
+    background-color: #181818; /* как фон кейса */
+  }
+
+   .case-section--hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+.case-card-inner {
+  width: 100%;
+  max-width: 686px;
+  height: 551px;
+  background: #242424;
+  border-radius: 45px;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 10px 30px;
+  box-sizing: border-box;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 19px,
+      rgba(29, 29, 29, 0.8) 19px,
+      rgba(29, 29, 29, 0.8) 21px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 19px,
+      rgba(29, 29, 29, 0.8) 19px,
+      rgba(29, 29, 29, 0.8) 21px
+    );
+  background-size: 20px 20px;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease,
+              transform 0.25s ease;
+}
+
+.case-card:hover .case-card-inner {
+  background-color: #2e2e2e56;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.177);
+  transform: translateY(-10px);
+}
+
+.case-card:hover .case-arrow {
+  transform: rotate(45deg);
+}
+
+.case-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 358px;
+  border-radius: 35px;
+  overflow: hidden;
+  border: 1px solid rgba(249, 244, 244, 0.2);
+}
+
+.case-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background-color: #181818;
+}
+
+.case-content {
+  position: relative;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.case-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.case-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.case-arrow {
+  width: 40px;
+  height: 40px;
+  transform: translateX(0);
+  transition: transform 0.25s ease;
+}
+
+.case-text {
+  max-width: 562px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.38;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .hero-image {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .hero-title {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 24px;
+  }
+
+  .hero {
+    padding: 140px 40px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: 44px;
+  }
+
+  .cases {
+    padding: 40px 24px;
+  }
+
+  .cases-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .case-card:last-child {
+    grid-column: 1;
+    max-width: 100%;
+  }
+}
+
+/* ===== Case pages ===== */
+/* ===== breadcrumbs ===== */
+
+.breadcrumbs {
+  max-width: 1397px;
+  margin: 120px auto 12px;
+  padding: 0 55px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumbs-link {
+  text-decoration: none;
+  font-family: "Jersey 10", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 32px;
+  line-height: 1;
+  text-transform: lowercase;
+  color: #d2d2d2;
+  -webkit-font-smoothing: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.breadcrumbs-link:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.breadcrumbs-separator {
+  font-family: "Jersey 10", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 32px;
+  line-height: 1;
+  text-transform: lowercase;
+  color: #d2d2d2;
+  -webkit-font-smoothing: none;
+}
+
+.breadcrumbs-current {
+  font-family: "Jersey 10", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 32px;
+  line-height: 1;
+  text-transform: lowercase;
+  color: #ffffff;
+  -webkit-font-smoothing: none;
+  cursor: default;
+}
+
+/* Контент кейса */
+
+.case-main {
+  padding-top: 16px;
+  padding-bottom: 80px;
+}
+
+/* Фреймы под картинки */
+.case-section {
+  max-width: 1392px;
+  margin: 0 auto 80px;
+  border-radius: 45px;
+  background-color: #181818;
+  overflow: hidden;
+}
+
+/* обложка — другой рост */
+
+/* остальные фреймы одинаковой высоты */
+.case-section:not(.case-section--hero) {
+  height: auto; 
+}
+
+/* краткое описание между обложкой и первым фреймом */
+.case-summary {
+  max-width: 1392px;
+  margin: 0 auto 80px;
+  padding: 0 4px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.case-summary-card {
+  height: 138px;
+  border-radius: 40px;
+  background-color: #242424;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 19px,
+      rgba(29, 29, 29, 0.8) 19px,
+      rgba(29, 29, 29, 0.8) 21px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 19px,
+      rgba(29, 29, 29, 0.8) 19px,
+      rgba(29, 29, 29, 0.8) 21px
+    );
+  background-size: 20px 20px;
+}
+
+.case-summary-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #ffffffce;
+}
+
+.case-summary-text {
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.557);
+}
+
+/* Блоки "текст + картинка" для wheel */
+/* Блоки "текст + картинка" для wheel */
+.case-combo {
+  max-width: 1392px;
+  margin: 0 auto 80px !important;
+}
+
+.case-combo .case-section {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.case-text-block {
+  max-width: 1392px;
+  margin-bottom: 40px!important;
+  display: grid;
+  grid-template-columns: 400px 968px;
+  gap: 24px;
+}
+
+.case-text-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 !important;
+}
+
+.case-text-body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 !important;
+}
+
+.case-text-body p {
+  margin: 0 !important;
+}
+
+/* адаптив для summary */
+@media (max-width: 768px) {
+  .case-summary {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .case-summary-card {
+    height: auto;
+    min-height: 120px;
+  }
+}
+
+.top-button {
+  position: fixed;
+  right: calc((100vw - 1397px) / 2 + 40px);
+  bottom: 40px;
+
+  width: 60px;
+  height: 60px;
+
+  background: rgba(60, 60, 60, 0.87);
+  backdrop-filter: blur(3.32727px);
+  border-radius: 54.5455px;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 1000;
+  
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.top-button-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.top-button:hover {
+  background: rgba(60, 60, 60, 1);
+  transform: translateY(-2px);
+}
+
+.top-button--visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* MOBILE 390px */
+@media (max-width: 430px) {
+  /* PAGE CONTAINER */
+  .page-container {
+    width: 100%;
+    max-width: 390px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .header {
+    display: flex;
+    width: 390px;
+    height: 66px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+  }
+
+  .header-link {
+    display: flex;
+    width: 104px;
+    padding: 16px 0;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .header-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: block;
+  }
+
+  .header-link--left .header-text::before {
+    content: "cv";
+    transform: translateY(16px);
+  }
+
+  .header-link--right .header-text::before {
+    content: "tg";
+  }
+
+  .header-link--left .header-text,
+  .header-link--right .header-text {
+    font-size: 32px;
+    line-height: 1;
+    color: transparent;
+    position: relative;
+  }
+
+  .header-link--left .header-text::before,
+  .header-link--right .header-text::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #d2d2d2;
+  }
+
+  .header-link--left {
+    justify-content: flex-start;
+    padding-left: 20px;
+    gap: 12px;
+  }
+
+  .header-link--right {
+    justify-content: flex-end;
+    padding-right: 20px;
+    gap: 8px;
+  }
+
+  .header-link--right .header-text::before {
+    transform: translateX(72px);
+  }
+
+  .logo {
+    position: static;
+    transform: none;
+  }
+
+  .logo img {
+    width: 40px;
+    height: 37.143px;
+    flex-shrink: 0;
+    display: block;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 96px 0 40px;
+    max-width: 390px;
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .hero-image {
+    order: 1;
+    width: 320px;
+    height: 320px;
+    margin-top: 24px;
+    flex-shrink: 0;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-text {
+    order: 2;
+    width: 100%;
+  }
+
+  .text-card {
+    width: 100%;
+    height: auto;
+    margin-top: 16px;
+    padding: 30px 24px 30px;
+    border-radius: 32px;
+  }
+
+  .title-first {
+    font-size: 40px;
+  }
+
+  .hero-title {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    line-height: 1.4;
+    max-width: 100%;
+  }
+
+  .title-row {
+    margin-bottom: 4px;
+  }
+
+  .badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 108px;
+    height: 44px;
+    background: rgba(81, 255, 1, 0.25);
+    backdrop-filter: blur(20px);
+    border-radius: 84px;
+    transform: rotate(9.94deg) translateY(-6px);
+    box-shadow: 0 0 60px rgba(81, 255, 1, 0.239),
+      inset 0 0 40px rgba(81, 255, 1, 0.2);
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.1;
+    color: #51ff01;
+    text-transform: lowercase;
+    text-align: center;
+  }
+
+  /* ВНУТРЕННИЕ СТРАНИЦЫ */
+  .case-main {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding-top: 0px;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+  }
+
+  .breadcrumbs {
+    width: 100%;
+    max-width: 350px;
+    margin-top: 80px;
+    padding: 8px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 20px;
+  }
+
+  .breadcrumbs-link,
+  .breadcrumbs-separator,
+  .breadcrumbs-current {
+    font-family: "Jersey 10", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+    word-wrap: break-word;
+  }
+
+  .breadcrumbs-link,
+  .breadcrumbs-separator {
+    color: rgba(255, 255, 255, 0.60);
+  }
+
+  .breadcrumbs-current {
+    color: rgba(255, 255, 255, 0.80);
+  }
+
+  /* HERO-ОБЛОЖКА КЕЙСОВ */
+  .case-section--hero {
+    width: 350px;
+    height: 220px;
+    margin: 16px auto 24px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #181818;
+  }
+
+  .case-section--hero .case-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* HERO картинки для всех проектов */
+  .case-hero--yma .case-hero-image {
+    content: url("images/yma-hero-mobile.png");
+  }
+
+  .case-hero--wheel .case-hero-image {
+    content: url("images/wheel-hero-mobile.png");
+  }
+
+  .case-hero--whipcash .case-hero-image {
+    content: url("images/whipcash-hero-mobile.png");
+  }
+
+  .case-hero--snt .case-hero-image {
+    content: url("images/snt-hero-mobile.png");
+  }
+
+  /* Общие настройки блоков с картинками */
+  .case-section {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto 24px;
+    border-radius: 16px;
+    background-color: #181818;
+    overflow: hidden;
+    height: auto;
+  }
+
+  .case-image-wrap,
+  .case-hero-image,
+  .case-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* SUMMARY */
+  .case-summary {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto 40px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .case-summary-card {
+    height: 79px !important;
+    min-height: 0 !important;
+    border-radius: 20px;
+    background-color: #242424;
+    box-sizing: border-box;
+    padding: 12px 21px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 19px,
+        rgba(29, 29, 29, 0.8) 19px,
+        rgba(29, 29, 29, 0.8) 21px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 19px,
+        rgba(29, 29, 29, 0.8) 19px,
+        rgba(29, 29, 29, 0.8) 21px
+      );
+    background-size: 20px 20px;
+  }
+
+  .case-summary-title {
+    margin: 0 0 2px 0;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .case-summary-text {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  /* CASES на главной */
+  .cases {
+    margin-top: 60px;
+    padding: 0 0 40px;
+    max-width: 390px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cases-title {
+    font-size: 32px;
+    margin: 0 20px 30px;
+  }
+
+  .cases-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 20px;
+  }
+
+  .case-card-inner {
+    height: 316px;
+    align-self: stretch;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    border-radius: 32px;
+    background: #242424;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 10px 30px;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 19px,
+        rgba(29, 29, 29, 0.8) 19px,
+        rgba(29, 29, 29, 0.8) 21px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 19px,
+        rgba(29, 29, 29, 0.8) 19px,
+        rgba(29, 29, 29, 0.8) 21px
+      );
+    background-size: 20px 20px;
+  }
+
+  .case-image-wrap {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(249, 244, 244, 0.2);
+    margin-bottom: 16px;
+  }
+
+  .case-content {
+    position: relative;
+    margin: 0 5px 8px;
+    padding: 0;
+  }
+
+  .case-title-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 4px;
+  }
+
+  .case-title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .case-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .case-text {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 0 5px 0;
+    width: auto;
+    font-family: 'Rubik', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19.43px;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  /* ----- YMA: мобильные версии 6 блоков ----- */
+  /* nth-of-type считает все <section>:
+     1 = hero, 2 = summary, 3 = блок 1, 4 = блок 2... */
+
+  .page-yma section:nth-of-type(3) .case-image {
+    content: url("images/yma-1-mobile.png");
+  }
+
+  .page-yma section:nth-of-type(4) .case-image {
+    content: url("images/yma-2-mobile.png");
+  }
+
+  .page-yma section:nth-of-type(5) .case-image {
+    content: url("images/yma-3-mobile.png");
+  }
+
+  .page-yma section:nth-of-type(6) .case-image {
+    content: url("images/yma-4-mobile.png");
+  }
+
+  .page-yma section:nth-of-type(7) .case-image {
+    content: url("images/yma-5-mobile.png");
+  }
+
+  .page-yma section:nth-of-type(8) .case-image {
+    content: url("images/yma-6-mobile.png");
+  }
+
+  /* Текстовые блоки для Whipcash и других */
+  .case-text-block {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto 12px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .case-text-title {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.80);
+    font-family: "Rubik", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .case-text-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .case-text-body p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.80);
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 145.8%;
+  }
+
+.case-combo .case-section {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+  /* YMA остаётся с 24px */
+  .page-yma .case-main .case-section {
+    margin-bottom: 24px;
+  }
+
+  .page-whipcash .case-combo {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto 20px; /* 40px отступ вниз после всего комбо */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Внутри комбо: текстовый блок без своего отступа */
+  .page-whipcash .case-combo .case-text-block {
+    margin: 0; /* убираем собственный отступ */
+  }
+
+  /* Внутри комбо: картинка без своего отступа */
+  .page-whipcash .case-combo .case-section {
+    margin: 0; /* убираем собственный отступ */
+  }
+
+  /* Отдельные картинки Whipcash (не в комбо) */
+  .page-whipcash .case-main > .case-section {
+    margin-bottom: 40px; /* 40px между отдельными картинками */
+  }
+
+.top-button {
+  position: fixed;
+  right: calc((90vw - 375px) / 2 + 30px);
+  bottom: 40px;
+
+  width: 50px;
+  height: 50px;
+
+  background: rgba(60, 60, 60, 0.87);
+  backdrop-filter: blur(3.32727px);
+  border-radius: 54.5455px;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 1000;
+  
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.top-button-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.top-button:hover {
+  background: rgba(60, 60, 60, 1);
+  transform: translateY(-2px);
+}
+
+.top-button--visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+  /* Мобильные версии картинок Whipcash */
+  /* Предположим, структура: hero, summary, комбо1 (текст+картинка1), комбо2 (текст+картинка2), картинка3, картинка4... */
+  
+/* ----- WHIPCASH: мобильные версии картинок ----- */
+
+  /* ----- WHIPCASH: мобильные версии картинок ----- */
+  .page-whipcash .case-section--whip-1 .case-image {
+    content: url("images/whipcash-1-mobile.png")!important;
+  }
+
+  .page-whipcash .case-section--whip-2 .case-image {
+    content: url("images/whipcash-2-mobile.png")!important;
+  }
+
+  .page-whipcash .case-section--whip-3 .case-image {
+    content: url("images/whipcash-3-mobile.png")!important;
+  }
+
+  .page-whipcash .case-section--whip-4 .case-image {
+    content: url("images/whipcash-4-mobile.png")!important;
+  }
+
+  .page-whipcash .case-section--whip-5 .case-image {
+    content: url("images/whipcash-5-mobile.png")!important;
+  }
+
+  .page-whipcash .case-section--whip-6 .case-image {
+    content: url("images/whipcash-6-mobile.png")!important;
+  }
+
+  .page-whipcash .case-section--whip-7 .case-image {
+    content: url("images/whipcash-7-mobile.png")!important;
+  }
+
+}

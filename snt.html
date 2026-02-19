@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whipcash case</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;600;700&family=Jersey+10&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="page-container">
+
+  <!-- HEADER -->
+  <header class="header">
+  <a href="CV.pdf" class="header-link header-link--left">
+    <img src="images/download.svg" alt="" class="header-icon">
+    <span class="header-text">download cv</span>
+  </a>
+
+  <div class="logo">
+  <a href="index.html">
+    <img src="images/logo.svg" alt="Logo">
+  </a>
+</div>
+
+  <a href="https://t.me/zickzackk" class="header-link header-link--right">
+    <span class="header-text">telegram</span>
+    <img src="images/telegram.svg" alt="" class="header-icon">
+  </a>
+</header>
+
+  <!-- BREADCRUMBS -->
+  <nav class="breadcrumbs">
+    <a href="index.html" class="breadcrumbs-link">works</a>
+    <span class="breadcrumbs-separator">/</span>
+    <span class="breadcrumbs-current">SNT-case</span>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="case-main">
+
+    <!-- HERO -->
+   <section class="case-section case-section--hero case-hero--snt">
+  <img src="images/snt-hero.png" alt="snt hero" class="case-image case-hero-image">
+</section>
+
+    <!-- SUMMARY -->
+    <section class="case-summary">
+      <div class="case-summary-card">
+        <h2 class="case-summary-title">SNT</h2>
+        <p class="case-summary-text">PROJECT NAME</p>
+      </div>
+
+      <div class="case-summary-card">
+        <h2 class="case-summary-title">AUGUST 2021 – OCTOBER 2022</h2>
+        <p class="case-summary-text">REALIZATION</p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="case-combo">
+      <div class="case-text-block">
+        <h2 class="case-text-title">ABOUT</h2>
+        <div class="case-text-body">
+          <p>
+         A service for gardening non-profit partnerships. Within the framework of the service, the roles of the administrator, the head of the cooperative and the member of the cooperative were implemented.
+          </p>
+         
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENS -->
+    <section class="case-section">
+      <img src="images/snt-1.png" alt="snt screen 1" class="case-image">
+    </section>
+
+    <section class="case-section">
+      <img src="images/snt-2.png" alt="snt screen 2" class="case-image">
+    </section>
+
+    <section class="case-section">
+      <img src="images/snt-3.png" alt="snt screen 3" class="case-image">
+    </section>
+
+    <section class="case-section">
+      <img src="images/snt-4.png" alt="snt-4 screen 4" class="case-image">
+    </section>
+
+    <section class="case-section">
+      <img src="images/snt-5.png" alt="snt screen 5" class="case-image">
+    </section>
+
+    <section class="case-section">
+      <img src="images/snt-6.jpg" alt="snt screen 6" class="case-image">
+    </section>
+
+ <section class="case-combo">
+      <div class="case-text-block">
+        <h2 class="case-text-title">SNT-ADDON</h2>
+        <div class="case-text-body">
+          <p>
+          An addition named “SNT-BAZAAR was developed separately, but soon after it was done, stakeholders rejected this idea and it was never published
+          </p>
+         
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <img src="images/snt-7.png" alt="snt screen 7" class="case-image">
+    </section>
+
+  </main>
+
+</div>
+
+<!-- BACK TO TOP -->
+<button class="top-button" aria-label="Back to top">
+  <img src="images/arrow.svg" alt="" class="top-button-icon">
+</button>
+
+<script>
+  const topButton = document.querySelector('.top-button');
+
+  if (topButton) {
+    topButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener('scroll', () => {
+      const showAfter = window.innerHeight * 0.8;
+      topButton.classList.toggle('top-button--visible', window.scrollY > showAfter);
+    });
+  }
+</script>
+
+</body>
+</html>

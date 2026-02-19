@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YMA case</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;600;700&family=Jersey+10&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-yma">
+  <div class="page-container">
+
+    <!-- тот же header, что и на главной -->
+   <header class="header">
+  <a href="CV.pdf" class="header-link header-link--left">
+    <img src="images/download.svg" alt="" class="header-icon">
+    <span class="header-text">download cv</span>
+  </a>
+
+  <div class="logo">
+  <a href="index.html">
+    <img src="images/logo.svg" alt="Logo">
+  </a>
+</div>
+
+  <a href="https://t.me/zickzackk" class="header-link header-link--right">
+    <span class="header-text">telegram</span>
+    <img src="images/telegram.svg" alt="" class="header-icon">
+  </a>
+</header>
+
+<nav class="breadcrumbs">
+      <a href="index.html" class="breadcrumbs-link">works</a>
+      <span class="breadcrumbs-separator">/</span>
+      <span class="breadcrumbs-current">yma-case</span>
+    </nav>
+
+
+
+    <main class="case-main">
+
+  <!-- обложка кейса -->
+<section class="case-section case-section--hero case-hero--yma">
+  <img src="images/yma-hero.png" alt="yma hero" class="case-image case-hero-image">
+</section>
+
+  <!-- краткое описание кейса -->
+  <section class="case-summary">
+    <div class="case-summary-card">
+      <h2 class="case-summary-title">YOU MAKE UP (YMA)</h2>
+      <p class="case-summary-text">
+        PROJECT NAME
+      </p>
+    </div>
+
+    <div class="case-summary-card">
+      <h2 class="case-summary-title">MARCH 2024 – APRIL 2024</h2>
+      <p class="case-summary-text">
+        REALIZATION
+      </p>
+    </div>
+  </section>
+
+  <!-- блок 1 -->
+  <section class="case-section">
+   <img src="images/yma-1.png" alt="YMA 1" class="case-image">
+  </section>
+
+  <!-- блок 2 -->
+  <section class="case-section">
+  <img src="images/yma-2.png" alt="YMA 2" class="case-image">
+  </section>
+
+  <!-- блок 3 -->
+  <section class="case-section">
+  <img src="images/yma-3.png" alt="YMA 3" class="case-image">
+  </section>
+
+  <!-- блок 4 -->
+  <section class="case-section">
+   <img src="images/yma-4.png" alt="YMA 4" class="case-image">
+  </section>
+
+  <!-- блок 5 -->
+  <section class="case-section">
+    <img src="images/yma-5.png" alt="YMA 5" class="case-image">
+  </section>
+
+  <!-- блок 6 -->
+  <section class="case-section">
+    <img src="images/yma-6.png" alt="YMA 6" class="case-image">
+  </section>
+
+</main>
+
+  </div>
+  <button class="top-button" aria-label="Back to top">
+  <img src="images/arrow.svg" alt="" class="top-button-icon">
+</button>
+<script>
+  const topButton = document.querySelector('.top-button');
+
+  if (topButton) {
+    // клик — скролл наверх
+    topButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // показ / скрытие по скроллу
+    window.addEventListener('scroll', () => {
+      const showAfter = window.innerHeight * 0.8; // почти высота первого экрана
+
+      if (window.scrollY > showAfter) {
+        topButton.classList.add('top-button--visible');
+      } else {
+        topButton.classList.remove('top-button--visible');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

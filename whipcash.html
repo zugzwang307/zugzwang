@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;600;700&family=Jersey+10&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whipcash – Mariya Mochalova</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-whipcash">
+
+<div class="page-container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="CV.pdf" class="header-link header-link--left">
+      <img src="images/download.svg" alt="" class="header-icon">
+      <span class="header-text">download cv</span>
+    </a>
+
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logo.svg" alt="Logo">
+      </a>
+    </div>
+
+    <a href="https://t.me/zickzackk" class="header-link header-link--right">
+      <span class="header-text">telegram</span>
+      <img src="images/telegram.svg" alt="" class="header-icon">
+    </a>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <nav class="breadcrumbs">
+    <a href="index.html" class="breadcrumbs-link">works</a>
+    <span class="breadcrumbs-separator">/</span>
+    <span class="breadcrumbs-current">whipcash-case</span>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="case-main">
+
+    <!-- HERO -->
+    <section class="case-section case-section--hero case-hero--whipcash">
+      <img src="images/whipcash-hero.png" alt="Whipcash hero" class="case-image case-hero-image">
+    </section>
+
+    <!-- SUMMARY -->
+    <section class="case-summary">
+      <div class="case-summary-card">
+        <h2 class="case-summary-title">WHIPCASH</h2>
+        <p class="case-summary-text">PROJECT NAME</p>
+      </div>
+
+      <div class="case-summary-card">
+        <h2 class="case-summary-title">AUGUST 2021 – OCTOBER 2022</h2>
+        <p class="case-summary-text">REALIZATION</p>
+      </div>
+    </section>
+
+    <!-- КОМБО 1: ABOUT + картинка 1 -->
+    <div class="case-combo case-combo--1">
+      <section class="case-text-block">
+        <h3 class="case-text-title">ABOUT</h3>
+        <div class="case-text-body">
+          <p>An online marketplace in which purchase and sale is carried out through transactions. The roles of buyer, seller and manager were implemented within the framework of the service.</p>
+          <p>Given the mentality and specifics of US customers, a survey was conducted of similar marketplaces. This helped define interface and interaction patterns.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-section--whip-1">
+        <img src="images/whipcash-1.png" alt="Whipcash screen 1" class="case-image">
+      </section>
+    </div>
+
+    <!-- КОМБО 2: USER FLOW + картинка 2 -->
+    <div class="case-combo case-combo--2">
+      <section class="case-text-block">
+        <h3 class="case-text-title">USER FLOW</h3>
+        <div class="case-text-body">
+          <p>The transaction process was designed to ensure security and trust between buyers and sellers, with clear steps and feedback at each stage.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-section--whip-2">
+        <img src="images/whipcash-2.png" alt="Whipcash screen 2" class="case-image">
+      </section>
+    </div>
+
+    <!-- Отдельные картинки 3–6 -->
+    <section class="case-section case-section--whip-3">
+      <img src="images/whipcash-3.png" alt="Whipcash screen 3" class="case-image">
+    </section>
+
+    <section class="case-section case-section--whip-4">
+      <img src="images/whipcash-4.png" alt="Whipcash screen 4" class="case-image">
+    </section>
+
+    <section class="case-section case-section--whip-5">
+      <img src="images/whipcash-5.png" alt="Whipcash screen 5" class="case-image">
+    </section>
+
+    <section class="case-section case-section--whip-6">
+      <img src="images/whipcash-6.png" alt="Whipcash screen 6" class="case-image">
+    </section>
+
+    <!-- КОМБО 3: RESULTS + картинка 7 -->
+    <div class="case-combo case-combo--3">
+      <section class="case-text-block">
+        <h3 class="case-text-title">RESULTS</h3>
+        <div class="case-text-body">
+          <p>The final design provided a clear, trustworthy experience for all user roles, reducing friction in transactions and increasing platform adoption.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-section--whip-7">
+        <img src="images/whipcash-7.png" alt="Whipcash screen 7" class="case-image">
+      </section>
+    </div>
+
+ 
+
+  </main>
+
+</div>
+
+<!-- BACK TO TOP -->
+<button class="top-button" aria-label="Back to top">
+  <img src="images/arrow.svg" alt="" class="top-button-icon">
+</button>
+
+<script>
+  const topButton = document.querySelector('.top-button');
+
+  if (topButton) {
+    topButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener('scroll', () => {
+      const showAfter = window.innerHeight * 0.8;
+      topButton.classList.toggle('top-button--visible', window.scrollY > showAfter);
+    });
+  }
+</script>
+</body>
+</html>
