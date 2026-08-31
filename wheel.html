@@ -3,121 +3,215 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Whipcash case</title>
+  <title>Wheel case — Product Design</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;600;700&family=Jersey+10&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Jersey+10&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="page-wheel">
+  <div class="page-container">
 
-<div class="page-container">
+    <!-- HEADER -->
+    <header class="header">
+      <a href="index.html" class="logo" aria-label="Home">
+        <img src="images/logo.svg" alt="Logo" class="logo-img">
+      </a>
 
-  <!-- HEADER -->
-  <header class="header">
-  <a href="CV.pdf" class="header-link header-link--left">
-    <img src="images/download.svg" alt="" class="header-icon">
-    <span class="header-text">download cv</span>
-  </a>
+      <nav class="header-nav">
+        <a href="CV.pdf" class="header-link" target="_blank" rel="noopener noreferrer">
+          <img src="images/download.svg" alt="" class="header-icon">
+          <span class="header-text">download cv</span>
+        </a>
 
-  <div class="logo">
-  <a href="index.html">
-    <img src="images/logo.svg" alt="Logo">
-  </a>
-</div>
+        <a href="https://t.me/zickzackk" class="header-link" target="_blank" rel="noopener noreferrer">
+          <img src="images/telegram.svg" alt="" class="header-icon">
+          <span class="header-text">telegram</span>
+        </a>
 
-  <a href="https://t.me/zickzackk" class="header-link header-link--right">
-    <span class="header-text">telegram</span>
-    <img src="images/telegram.svg" alt="" class="header-icon">
-  </a>
-</header>
+               <!-- ЯЗЫКОВОЙ ПЕРЕКЛЮЧАТЕЛЬ: активен ENG -->
+        <div class="lang-switcher">
+          <a href="#" class="lang-link">ru</a>
+          <span class="lang-separator">/</span>
+          <a href="#" class="lang-link active">eng</a>
+        </div>
 
-  <!-- BREADCRUMBS -->
-  <nav class="breadcrumbs">
-    <a href="index.html" class="breadcrumbs-link">works</a>
-    <span class="breadcrumbs-separator">/</span>
-    <span class="breadcrumbs-current">Wheel-case</span>
-  </nav>
+      </nav>
+    </header>
 
-  <!-- MAIN -->
-  <main class="case-main">
+    <!-- BREADCRUMBS -->
+    <nav class="breadcrumbs">
+      <a href="index.html" class="breadcrumbs-link">works</a>
+      <span class="breadcrumbs-separator">/</span>
+      <span class="breadcrumbs-current">wheel-case</span>
+    </nav>
 
-    <!-- HERO -->
-   <section class="case-section case-section--hero case-hero--wheel">
-  <img src="images/wheel-hero.png" alt="wheel hero" class="case-image case-hero-image">
-</section>
+    <!-- MAIN CASE CONTENT -->
+    <main class="case-main">
 
-    <!-- SUMMARY -->
-    <section class="case-summary">
-      <div class="case-summary-card">
-        <h2 class="case-summary-title">WHEEL</h2>
-        <p class="case-summary-text">PROJECT NAME</p>
-      </div>
+      <!-- HERO COVER -->
+      <section class="case-section case-section--hero case-hero--wheel">
+        <img src="images/wheel-hero.png" alt="Wheel Hero Cover" class="case-image case-hero-image">
+      </section>
 
-      <div class="case-summary-card">
-        <h2 class="case-summary-title">MARCH 2024 – JUNE 2024</h2>
-        <p class="case-summary-text">REALIZATION</p>
-      </div>
-    </section>
+      <!-- SNAPSHOT CARDS -->
+      <section class="case-summary case-summary--triad">
+        <div class="case-summary-card">
+          <h2 class="case-summary-title">URBAN MOBILITY &amp; GEO</h2>
+          <p class="case-summary-text">PROJECT NICHE</p>
+        </div>
 
-    <!-- ABOUT -->
-    <section class="case-combo">
-      <div class="case-text-block">
-        <h2 class="case-text-title">ABOUT</h2>
-        <div class="case-text-body">
-          <p>
-            A mobile application for collecting feedback from cyclists on the condition of roads and general infrastructure. In addition, the app has the ability to plot tracks along the route with the ability to set a route based on infrastructure, support for services for cyclists and surveys.
+        <div class="case-summary-card">
+          <h2 class="case-summary-title">SOLO PRODUCT DESIGNER</h2>
+          <p class="case-summary-text">ROLE</p>
+        </div>
+
+        <div class="case-summary-card case-summary-card--impact">
+          <h2 class="case-summary-title accent-green">2-TAP ROUTE START</h2>
+          <p class="case-summary-text">MAIN IMPACT</p>
+        </div>
+      </section>
+
+      <!-- ABOUT & CHALLENGE -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">ABOUT</h2>
+          <p class="narrative-lead">
+            A crowdsourced urban mobility mobile application designed for cyclists, enabling real-time road condition feedback, smart infrastructure-based route navigation, and community-driven hazard reporting.
           </p>
         </div>
-      </div>
-    </section>
 
-    <!-- SCREENS -->
-    <section class="case-section">
-      <img src="images/wheel-1.png" alt="WHEEL screen 1" class="case-image">
-    </section>
+        <div class="narrative-block">
+          <h3 class="narrative-subtitle">Context &amp; Challenge</h3>
+          <div class="narrative-body">
+            <p><strong>Business Goal:</strong> Empower municipal cyclists to navigate safely while generating structured urban infrastructure data for city planning initiatives.</p>
+            <p><strong>User Pain Points:</strong> Standard navigation apps ignore bike lanes, steep elevation, and road surface hazards; reporting issues while riding was dangerous due to small touch targets.</p>
+            <p><strong>Constraints:</strong> High-contrast outdoor legibility, one-handed interaction ergonomics while cycling, and rapid 4-month end-to-end design delivery.</p>
+          </div>
+        </div>
+      </section>
 
-    <section class="case-section">
-      <img src="images/wheel-2.png" alt="WHEEL screen 2" class="case-image">
-    </section>
+      <!-- VISUAL 1 -->
+      <section class="case-section">
+        <img src="images/wheel-1.png" alt="Wheel App Overview" class="case-image">
+      </section>
 
-    <section class="case-section">
-      <img src="images/wheel-2.png" alt="WHEEL screen 3" class="case-image">
-    </section>
+      <!-- STRATEGY & MVP SCOPING -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">Strategy &amp; MVP Scoping</h2>
+          <div class="narrative-body">
+            <p><strong>Deliberately cut from MVP:</strong> Deferred complex social leaderboards and bluetooth hardware sensor pairing to focus entirely on route speed and rider safety.</p>
+            <p><strong>Core Loop:</strong> One-tap destination search → Infrastructure route preference (Safe / Fast) → Active navigation with voice alerts → Quick hazard confirmation.</p>
+          </div>
+        </div>
+      </section>
 
-    <section class="case-section">
-      <img src="images/wheel-4.png" alt="WHEEL screen 4" class="case-image">
-    </section>
+      <!-- VISUAL 2 -->
+      <section class="case-section">
+        <img src="images/wheel-2.png" alt="Wheel Navigation UI" class="case-image">
+      </section>
 
-    <section class="case-section">
-      <img src="images/wheel-5.png" alt="WHEEL screen 5" class="case-image">
-    </section>
+      <!-- EXECUTION & UX ARCHITECTURE -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">Execution &amp; UX Architecture</h2>
+          <div class="narrative-body">
+            <p><strong>Key Flows:</strong> Designed 48px+ thumb-friendly touch targets with high-contrast UI mode to ensure effortless hazard logging without taking eyes off the road.</p>
+            <p><strong>System Scalability:</strong> Created dynamic map marker components and structured feedback survey cards supporting multi-city rollout.</p>
+          </div>
+        </div>
+      </section>
 
-  </main>
+      <!-- VISUALS 3–5 -->
+      <section class="case-section">
+        <img src="images/wheel-3.png" alt="Wheel Route Settings" class="case-image">
+      </section>
 
-</div>
+      <section class="case-section">
+        <img src="images/wheel-4.png" alt="Wheel Survey Flow" class="case-image">
+      </section>
 
-<!-- BACK TO TOP -->
-<button class="top-button" aria-label="Back to top">
-  <img src="images/arrow.svg" alt="" class="top-button-icon">
-</button>
+      <section class="case-section">
+        <img src="images/wheel-5.png" alt="Wheel Design System" class="case-image">
+      </section>
 
-<script>
-  const topButton = document.querySelector('.top-button');
+      <!-- BOTTOM SECTION -->
+      <section class="case-bottom-container">
+        <div class="case-bottom-content">
+          
+          <div class="case-metrics-grid">
+            <div class="metric-col">
+              <span class="metric-number">2 TAPS</span>
+              <p class="metric-desc">Frictionless route launch from lockscreen widget directly to turn-by-turn mode</p>
+            </div>
+            <div class="metric-col">
+              <span class="metric-number">48PX+</span>
+              <p class="metric-desc">Enlarged tap zones compliant with outdoor riding ergonomics and gloved use</p>
+            </div>
+            <div class="metric-col">
+              <span class="metric-number">1 CLICK</span>
+              <p class="metric-desc">Instant road hazard logging reducing rider distraction during active commute</p>
+            </div>
+          </div>
 
-  if (topButton) {
-    topButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+          <div class="case-retrospective">
+            <h2 class="retrospective-title">RETROSPECTIVE</h2>
+            <div class="retrospective-grid">
+              <div class="retrospective-col">
+                <p class="retrospective-text">What worked: High-contrast outdoor map styling and oversized action targets made navigation reliable under direct sunlight.</p>
+              </div>
+              <div class="retrospective-col">
+                <p class="retrospective-text">Next in v2.0: Add automatic elevation compensation routing for e-bike commuters and municipal open-data sync.</p>
+              </div>
+            </div>
+          </div>
 
-    window.addEventListener('scroll', () => {
-      const showAfter = window.innerHeight * 0.8;
-      topButton.classList.toggle('top-button--visible', window.scrollY > showAfter);
-    });
-  }
-</script>
+          <nav class="case-nav-footer">
+            <a href="whipcash.html" class="case-nav-card prev">
+              <img src="images/arrow.svg" alt="" class="case-nav-arrow">
+              <div class="nav-card-meta">
+                <span class="nav-card-title">PREVIOUS PROJECT</span>
+                <span class="nav-card-subtitle">Whipcash Fintech</span>
+              </div>
+            </a>
+            
+            <a href="snt.html" class="case-nav-card next">
+              <div class="nav-card-meta text-right">
+                <span class="nav-card-title">NEXT PROJECT</span>
+                <span class="nav-card-subtitle">SNT Management</span>
+              </div>
+              <img src="images/arrow.svg" alt="" class="case-nav-arrow">
+            </a>
+          </nav>
+
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- TOP BUTTON -->
+  <button class="top-button" aria-label="Back to top">
+    <img src="images/arrow.svg" alt="" class="top-button-icon">
+  </button>
+
+  <script>
+    const topButton = document.querySelector('.top-button');
+    if (topButton) {
+      topButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      window.addEventListener('scroll', () => {
+        const showAfter = window.innerHeight * 0.8;
+        topButton.classList.toggle('top-button--visible', window.scrollY > showAfter);
+      });
+    }
+  </script>
 
 </body>
 </html>

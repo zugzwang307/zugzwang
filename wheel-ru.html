@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кейс Wheel — Мария Мочалова</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Jersey+10&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-wheel">
+  <div class="page-container">
+
+    <!-- HEADER -->
+    <header class="header">
+      <a href="index-ru.html" class="logo" aria-label="Главная">
+        <img src="images/logo.svg" alt="Logo" class="logo-img">
+      </a>
+
+      <nav class="header-nav">
+        <a href="CV-ru.pdf" class="header-link" target="_blank" rel="noopener noreferrer">
+          <img src="images/download.svg" alt="" class="header-icon">
+          <span class="header-text">download cv</span>
+        </a>
+
+        <a href="https://t.me/zickzackk" class="header-link" target="_blank" rel="noopener noreferrer">
+          <img src="images/telegram.svg" alt="" class="header-icon">
+          <span class="header-text">telegram</span>
+        </a>
+
+        <div class="lang-switcher">
+          <a href="#" class="lang-link active">ru</a>
+          <span class="lang-separator">/</span>
+          <a href="wheel.html" class="lang-link">eng</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- BREADCRUMBS -->
+    <nav class="breadcrumbs">
+      <a href="index-ru.html" class="breadcrumbs-link">projects</a>
+      <span class="breadcrumbs-separator">/</span>
+      <span class="breadcrumbs-current">wheel-case</span>
+    </nav>
+
+    <!-- MAIN CASE CONTENT -->
+    <main class="case-main">
+
+      <!-- HERO COVER -->
+      <section class="case-section case-section--hero case-hero--wheel">
+        <img src="images/wheel-hero.png" alt="Wheel Hero Cover" class="case-image case-hero-image">
+      </section>
+
+      <!-- SNAPSHOT CARDS -->
+      <section class="case-summary case-summary--triad">
+        <div class="case-summary-card">
+          <h2 class="case-summary-title">URBAN MOBILITY &amp; GEO</h2>
+          <p class="case-summary-text">СФЕРА</p>
+        </div>
+
+        <div class="case-summary-card">
+          <h2 class="case-summary-title">SOLO PRODUCT DESIGNER</h2>
+          <p class="case-summary-text">РОЛЬ</p>
+        </div>
+
+        <div class="case-summary-card case-summary-card--impact">
+          <h2 class="case-summary-title accent-green">2 ТАПА ДО СТАРТА</h2>
+          <p class="case-summary-text">РЕЗУЛЬТАТ</p>
+        </div>
+      </section>
+
+      <!-- ABOUT & CHALLENGE -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">О ПРОЕКТЕ</h2>
+          <p class="narrative-lead">
+            Мобильное приложение для безопасной городской велонавигации, анализа дорожного покрытия и картирования велоинфраструктуры.
+          </p>
+        </div>
+
+        <div class="narrative-block">
+          <h3 class="narrative-subtitle">Контекст и Проблема</h3>
+          <div class="narrative-body">
+            <p><strong>Бизнес-задача:</strong> Разработать удобный велонавигатор, решающий проблему безопасности маршрутов в мегаполисе и собирающий пользовательские данные о дорожной инфраструктуре.</p>
+            <p><strong>Пользовательская боль:</strong> Стандартные автонавигаторы строят опасные маршруты по скоростным магистралям, не учитывают качество покрытия, высоту бордюров и наличие велодорожек.</p>
+            <p><strong>Ограничения:</strong> Проектирование эргономики под управление одной рукой на ходу, физическая безопасность велосипедиста и кросс-платформенность (iOS / Android).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VISUAL 1 -->
+      <section class="case-section">
+        <img src="images/wheel-1.png" alt="Wheel Navigation Overview" class="case-image">
+      </section>
+
+      <!-- STRATEGY & MVP SCOPING -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">Приоритизация и Скоупинг</h2>
+          <div class="narrative-body">
+            <p><strong>Что намеренно вырезали из MVP:</strong> Отказались от соревновательных спидометров, интеграции фитнес-трекеров и сложных 3D-моделей зданий для обеспечения идеальной скорости работы карты.</p>
+            <p><strong>Core Loop:</strong> Выбор точки на карте → Мгновенный выбор типа маршрута (Безопасный / Быстрый) → Запуск HUD-навигации за 2 клика.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VISUALS 2, 3 -->
+      <section class="case-section">
+        <img src="images/wheel-2.png" alt="Wheel Route Selection" class="case-image">
+      </section>
+
+      <section class="case-section">
+        <img src="images/wheel-3.png" alt="Wheel UI Details" class="case-image">
+      </section>
+
+      <!-- EXECUTION & UX ARCHITECTURE -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">Реализация и UX-Логика</h2>
+          <div class="narrative-body">
+            <p><strong>Онбординг и активация:</strong> Принцип «Zero Friction Start» — доступ к построению маршрута без обязательной регистрации сразу после первого открытия приложения.</p>
+            <p><strong>Ключевые флоу:</strong> Спроектировали эргономичные выдвижные шторки (bottom sheets) и контрастный HUD-режим с крупными шрифтами и голосовыми подсказками.</p>
+            <p><strong>Системность:</strong> Разработали UI-кит с акцентом на безопасность: высококонтрастная палитра для яркого солнца и увеличенные области нажатия (touch target от 48×48px).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VISUALS 4, 5 -->
+      <section class="case-section">
+        <img src="images/wheel-4.png" alt="Wheel Screen 4" class="case-image">
+      </section>
+
+      <section class="case-section">
+        <img src="images/wheel-5.png" alt="Wheel Screen 5" class="case-image">
+      </section>
+
+    <!-- BOTTOM SECTION -->
+      <section class="case-bottom-container">
+        <div class="case-bottom-content">
+          
+          <div class="case-metrics-grid">
+            <div class="metric-col">
+              <span class="metric-number">2 ТАПА</span>
+              <p class="metric-desc">От запуска экрана до начала ведения по веломаршруту</p>
+            </div>
+            <div class="metric-col">
+              <span class="metric-number">48PX+</span>
+              <p class="metric-desc">Минимальный размер зон нажатия для безошибочного клика на руле</p>
+            </div>
+            <div class="metric-col">
+              <span class="metric-number">1 ТАП</span>
+              <p class="metric-desc">Для быстрой отправки пина о препятствии или ремонте дороги</p>
+            </div>
+          </div>
+
+          <div class="case-retrospective">
+            <h2 class="retrospective-title">РЕТРОСПЕКТИВА</h2>
+            <div class="retrospective-grid">
+              <div class="retrospective-col">
+                <p class="retrospective-text">Что выстрелило: Концепция «карта как единственный рабочий экран» и мгновенная отправка меток решили главную проблему безопасности и скорости навигации.</p>
+              </div>
+              <div class="retrospective-col">
+                <p class="retrospective-text">Что улучшить в v2.0: Проработать офлайн-кэширование карт для загородных треков и добавить выбор типа велосипеда (шоссейный / гравийный / городской).</p>
+              </div>
+            </div>
+          </div>
+
+          <nav class="case-nav-footer">
+            <a href="whipcash.html" class="case-nav-card prev">
+              <img src="images/arrow.svg" alt="" class="case-nav-arrow">
+              <div class="nav-card-meta">
+                <span class="nav-card-title">ПРЕДЫДУЩИЙ</span>
+                <span class="nav-card-subtitle">Whipcash Fintech</span>
+              </div>
+            </a>
+            
+            <a href="snt.html" class="case-nav-card next">
+              <div class="nav-card-meta text-right">
+                <span class="nav-card-title">СЛЕДУЮЩИЙ</span>
+                <span class="nav-card-subtitle">SNT Management</span>
+              </div>
+              <img src="images/arrow.svg" alt="" class="case-nav-arrow">
+            </a>
+          </nav>
+
+        </div>
+      </section>
+      
+
+    </main>
+
+  </div>
+
+  <!-- TOP BUTTON -->
+  <button class="top-button" aria-label="Наверх">
+    <img src="images/arrow.svg" alt="" class="top-button-icon">
+  </button>
+
+  <script>
+    const topButton = document.querySelector('.top-button');
+    if (topButton) {
+      topButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      window.addEventListener('scroll', () => {
+        const showAfter = window.innerHeight * 0.8;
+        topButton.classList.toggle('top-button--visible', window.scrollY > showAfter);
+      });
+    }
+  </script>
+
+</body>
+</html>
