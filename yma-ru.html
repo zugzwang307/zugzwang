@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кейс YMA — Мария Мочалова</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Jersey+10&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-yma">
+  <div class="page-container">
+
+    <!-- HEADER -->
+    <header class="header">
+      <a href="index-ru.html" class="logo" aria-label="Главная">
+        <img src="images/logo.svg" alt="Logo" class="logo-img">
+      </a>
+
+      <nav class="header-nav">
+        <a href="CV-ru.pdf" class="header-link" target="_blank" rel="noopener noreferrer">
+          <img src="images/download.svg" alt="" class="header-icon">
+          <span class="header-text">download cv</span>
+        </a>
+
+        <a href="https://t.me/zickzackk" class="header-link" target="_blank" rel="noopener noreferrer">
+          <img src="images/telegram.svg" alt="" class="header-icon">
+          <span class="header-text">telegram</span>
+        </a>
+<div class="lang-switcher">
+    <a href="#" class="lang-link active">ru</a>
+    <span class="lang-separator">/</span>
+    <a href="yma.html" class="lang-link">eng</a>
+</div>
+
+      </nav>
+    </header>
+
+    <!-- BREADCRUMBS -->
+    <nav class="breadcrumbs">
+      <a href="index-ru.html" class="breadcrumbs-link">projects</a>
+      <span class="breadcrumbs-separator">/</span>
+      <span class="breadcrumbs-current">yma-case</span>
+    </nav>
+
+    <!-- MAIN CASE CONTENT -->
+    <main class="case-main">
+
+      <!-- 1. HERO COVER -->
+      <section class="case-section case-section--hero case-hero--yma">
+        <img src="images/yma-hero.png" alt="YMA Hero Cover" class="case-image case-hero-image">
+      </section>
+
+      <!-- 2. PARAMETERS TRIAD -->
+      <section class="case-summary case-summary--triad">
+        <div class="case-summary-card">
+          <h2 class="case-summary-title">BEAUTY EDTECH</h2>
+          <p class="case-summary-text">СФЕРА</p>
+        </div>
+
+        <div class="case-summary-card">
+          <h2 class="case-summary-title">SOLO PRODUCT DESIGNER</h2>
+          <p class="case-summary-text">РОЛЬ</p>
+        </div>
+
+        <div class="case-summary-card case-summary-card--impact">
+          <h2 class="case-summary-title accent-green">100% УСПЕХ UX-ТЕСТА</h2>
+          <p class="case-summary-text">РЕЗУЛЬТАТ</p>
+        </div>
+      </section>
+
+      <!-- 3. ABOUT & CHALLENGE -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">О ПРОЕКТЕ</h2>
+          <p class="narrative-lead">
+            Мобильная образовательная платформа с пошаговой интерактивной практикой макияжа и персонализированными треками обучения для азиатского рынка.
+          </p>
+        </div>
+
+        <div class="narrative-block">
+          <h3 class="narrative-subtitle">Контекст и Проблема</h3>
+          <div class="narrative-body">
+            <p><strong>Бизнес-задача:</strong> Спроектировать и валидировать концепт микромодульного EdTech-приложения для обучения макияжу с учетом специфики азиатской аудитории.</p>
+            <p><strong>Пользовательская боль:</strong> Длинные видеоуроки вызывают утомление; ученицы теряют фокус и бросают занятия из-за отсутствия пошаговой синхронизации с реальной практикой.</p>
+            <p><strong>Ограничения:</strong> Сжатые сроки (6 недель), проектирование в соло под iOS/Android и подготовка дизайн-системы для быстрой передачи в разработку.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. VISUAL 1 -->
+      <section class="case-section">
+        <img src="images/yma-1.png" alt="YMA UI Overview" class="case-image">
+      </section>
+
+      <!-- 5. STRATEGY & MVP SCOPING -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">Приоритизация и Скоупинг</h2>
+          <div class="narrative-body">
+            <p><strong>Что намеренно вырезали из MVP:</strong> Отказались от общей социальной ленты, консультаций с экспертами 1-на-1 и сложной рейтинговой геймификации в пользу чистоты образовательного пути.</p>
+            <p><strong>Core Loop:</strong> Короткий опрос на уровень навыка → Микроурок: «Шаг видео → Автопауза → Практика» → Фиксация прогресса в трекере за 3 клика.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. VISUAL 2 -->
+      <section class="case-section">
+        <img src="images/yma-2.png" alt="YMA Step-by-Step Flow" class="case-image">
+      </section>
+
+      <!-- 7. EXECUTION & UX ARCHITECTURE -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">Реализация и UX-Логика</h2>
+          <div class="narrative-body">
+            <p><strong>Онбординг и активация:</strong> Простой квиз из 3 вопросов сразу формирует персональный учебный план, исключая когнитивную перегрузку при первом запуске.</p>
+            <p><strong>Ключевые флоу:</strong> Внедрили паттерн карточек уроков с градацией сложности (Beginner / Intermediate / Pro), крупными элементами управления плеером для работы одной рукой и пошаговым чек-листом косметики.</p>
+            <p><strong>Системность:</strong> Собрали компонентный UI-кит в Figma с токенизированными состояниями кнопок, интерактивными элементами плеера и адаптированной типографикой.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. VISUAL 3 & 4 -->
+      <section class="case-section">
+        <img src="images/yma-3.png" alt="YMA Interface Details 1" class="case-image">
+      </section>
+
+      <section class="case-section">
+        <img src="images/yma-4.png" alt="YMA Interface Details 2" class="case-image">
+      </section>
+
+      <!-- 9. VISUAL 5 & 6 -->
+      <section class="case-section">
+        <img src="images/yma-5.png" alt="YMA Screen 5" class="case-image">
+      </section>
+
+      <!-- 10. BOTTOM SECTION -->
+      <section class="case-bottom-container">
+        <div class="case-bottom-content">
+          
+          <!-- METRICS / ACHIEVEMENTS -->
+          <div class="case-metrics-grid">
+            <div class="metric-col">
+              <span class="metric-number">12 ИЗ 12</span>
+              <p class="metric-desc">Респондентов успешно завершили интерактивный урок на тестировании кликабельного прототипа</p>
+            </div>
+            <div class="metric-col">
+              <span class="metric-number">3 КЛИКА</span>
+              <p class="metric-desc">От первого входа в приложение до запуска пошаговой практики макияжа</p>
+            </div>
+            <div class="metric-col">
+              <span class="metric-number">0 ОШИБОК</span>
+              <p class="metric-desc">При навигации в режиме пошагового плеера</p>
+            </div>
+          </div>
+
+          <!-- RETROSPECTIVE -->
+          <div class="case-retrospective">
+            <h2 class="retrospective-title">РЕТРОСПЕКТИВА</h2>
+            <div class="retrospective-grid">
+              <div class="retrospective-col">
+                <p class="retrospective-text"><strong>Что выстрелило:</strong> Пошаговый формат с автопаузой полностью снял страх ошибки у новичков и получил 100% положительный отклик на UX-тестах.</p>
+              </div>
+              <div class="retrospective-col">
+                <p class="retrospective-text"><strong>Что улучшить в v2.0:</strong> Добавить режим AR-зеркала с виртуальным наложением направляющих линий макияжа прямо во время урока.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PREVIOUS / NEXT CARDS -->
+        <nav class="case-nav-footer">
+    <a href="skinity-ru.html" class="case-nav-card prev">
+        <img src="images/arrow.svg" alt="" class="case-nav-arrow">
+        <div class="nav-card-meta">
+            <span class="nav-card-title">ПРЕДЫДУЩИЙ</span>
+            <span class="nav-card-subtitle">Skinity Gaming &amp; FinTech</span>
+        </div>
+    </a>
+    
+    <a href="whipcash-ru.html" class="case-nav-card next">
+        <div class="nav-card-meta text-right">
+            <span class="nav-card-title">СЛЕДУЮЩИЙ</span>
+            <span class="nav-card-subtitle">Whipcash Marketplace</span>
+        </div>
+        <img src="images/arrow.svg" alt="" class="case-nav-arrow">
+    </a>
+</nav>
+
+
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- TOP BUTTON -->
+  <button class="top-button" aria-label="Наверх">
+    <img src="images/arrow.svg" alt="" class="top-button-icon">
+  </button>
+
+  <script>
+    const topButton = document.querySelector('.top-button');
+    if (topButton) {
+      topButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      window.addEventListener('scroll', () => {
+        const showAfter = window.innerHeight * 0.8;
+        topButton.classList.toggle('top-button--visible', window.scrollY > showAfter);
+      });
+    }
+  </script>
+
+</body>
+</html>

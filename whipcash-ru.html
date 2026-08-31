@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кейс Whipcash — Мария Мочалова</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Jersey+10&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-whipcash">
+  <div class="page-container">
+
+    <!-- HEADER -->
+    <header class="header">
+      <a href="index-ru.html" class="logo" aria-label="Главная">
+        <img src="images/logo.svg" alt="Logo" class="logo-img">
+      </a>
+
+      <nav class="header-nav">
+        <a href="CV-ru.pdf" class="header-link" target="_blank" rel="noopener noreferrer">
+          <img src="images/download.svg" alt="" class="header-icon">
+          <span class="header-text">download cv</span>
+        </a>
+
+        <a href="https://t.me/zickzackk" class="header-link" target="_blank" rel="noopener noreferrer">
+          <img src="images/telegram.svg" alt="" class="header-icon">
+          <span class="header-text">telegram</span>
+        </a>
+
+        <div class="lang-switcher">
+    <a href="#" class="lang-link active">ru</a>
+    <span class="lang-separator">/</span>
+    <a href="whipcash.html" class="lang-link">eng</a>
+</div>
+
+      </nav>
+    </header>
+
+    <!-- BREADCRUMBS -->
+    <nav class="breadcrumbs">
+      <a href="index-ru.html" class="breadcrumbs-link">projects</a>
+      <span class="breadcrumbs-separator">/</span>
+      <span class="breadcrumbs-current">whipcash-case</span>
+    </nav>
+
+    <!-- MAIN CASE CONTENT -->
+    <main class="case-main">
+
+      <!-- HERO COVER -->
+      <section class="case-section case-section--hero case-hero--whipcash">
+        <img src="images/whipcash-hero.png" alt="Whipcash Hero Cover" class="case-image case-hero-image">
+      </section>
+
+      <!-- SNAPSHOT CARDS -->
+      <section class="case-summary case-summary--triad">
+        <div class="case-summary-card">
+          <h2 class="case-summary-title">E-COMMERCE/FINTECH</h2>
+          <p class="case-summary-text">СФЕРА</p>
+        </div>
+
+        <div class="case-summary-card">
+          <h2 class="case-summary-title">SOLO PRODUCT DESIGNER</h2>
+          <p class="case-summary-text">РОЛЬ</p>
+        </div>
+
+        <div class="case-summary-card case-summary-card--impact">
+          <h2 class="case-summary-title accent-green">ОБЪЯВЛЕНИЕ ЗА 90 СЕК</h2>
+          <p class="case-summary-text">РЕЗУЛЬТАТ</p>
+        </div>
+      </section>
+
+      <!-- ABOUT & CHALLENGE -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">О ПРОЕКТЕ</h2>
+          <p class="narrative-lead">
+            Международный транзакционный маркетплейс безопасных сделок для мгновенной и защищенной купли-продажи цифровых товаров на рынке США
+          </p>
+        </div>
+
+        <div class="narrative-block">
+          <h3 class="narrative-subtitle">Контекст и Проблема</h3>
+          <div class="narrative-body">
+            <p><strong>Бизнес-задача:</strong> Спроектировать доверительную P2P-платформу с эскроу-сервисом для безопасных покупок автомобилей у частных лиц для рынка США.</p>
+            <p><strong>Пользовательская боль:</strong> Сложные таблицы и громоздкие формы вызывали бросание публикации лотов продавцами, а покупатели испытывали барьер недоверия на этапе чекаута.</p>
+            <p><strong>Ограничения:</strong> Проектирование в соло сложной трехролевой веб-системы (Buyer / Seller / Dispute Manager) со всеми состояниями ошибок и транзакций.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VISUAL 1 -->
+      <section class="case-section">
+        <img src="images/whipcash-1.png" alt="Whipcash Marketplace Overview" class="case-image">
+      </section>
+
+      <!-- STRATEGY & MVP SCOPING -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">Приоритизация и Скоупинг</h2>
+          <div class="narrative-body">
+            <p><strong>Что намеренно вырезали из MVP:</strong> Отказались от интеграции со сторонними автосервисами и сложного кредитного калькулятора ради оттачивания P2P-транзакций и депонирования средств.</p>
+            <p><strong>Core Loop:</strong> Продавец публикует лот через 3-шаговый визард → Покупатель оплачивает сделку через эскроу → Мгновенная выдача цифрового товара и автозакрытие транзакции.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXECUTION & UX ARCHITECTURE -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">Реализация и UX-Логика</h2>
+          <div class="narrative-body">
+            <p><strong>Онбординг и активация:</strong> Лаконичный чекаут в 2 клика с акцентными trust-бейждами безопасности сделки и авторизацией через Google / Apple ID без лишних полей.</p>
+            <p><strong>Ключевые флоу:</strong> Замена громоздких таблиц на пошаговый UI-мастер в Seller Dashboard и создание компактного Manager Workspace для разбора споров по карточкам сделок.</p>
+            <p><strong>Системность:</strong> Выстроена компонентная UI-библиотека в Figma с готовыми транзакционными паттернами, бейджами статусов и карточками лотов для бесшовной передачи фронтендерам.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VISUALS 4, 5, 6, 7 -->
+      <section class="case-section">
+        <img src="images/whipcash-4.png" alt="Whipcash Screen 4" class="case-image">
+      </section>
+
+      <section class="case-section">
+        <img src="images/whipcash-5.png" alt="Whipcash Screen 5" class="case-image">
+      </section>
+
+      <section class="case-section">
+        <img src="images/whipcash-6.png" alt="Whipcash Screen 6" class="case-image">
+      </section>
+
+      <section class="case-section">
+        <img src="images/whipcash-7.png" alt="Whipcash Screen 7" class="case-image">
+      </section>
+
+      <!-- BOTTOM SECTION -->
+      <section class="case-bottom-container">
+        <div class="case-bottom-content">
+          
+          <!-- METRICS / ACHIEVEMENTS -->
+          <div class="case-metrics-grid">
+            <div class="metric-col">
+              <span class="metric-number">90 СЕК</span>
+              <p class="metric-desc">Среднее время подачи объявления продавцом вместо прежних 8 минут</p>
+            </div>
+            <div class="metric-col">
+              <span class="metric-number">3 РОЛИ</span>
+              <p class="metric-desc">Спроектированы с нуля в единой дизайн-системе без пересечения UX-конфликтов</p>
+            </div>
+            <div class="metric-col">
+              <span class="metric-number">1 ЭКРАН</span>
+              <p class="metric-desc">Для полного отслеживания статуса движения средств и документов</p>
+            </div>
+          </div>
+
+          <!-- RETROSPECTIVE -->
+          <div class="case-retrospective">
+            <h2 class="retrospective-title">РЕТРОСПЕКТИВА</h2>
+            <div class="retrospective-grid">
+              <div class="retrospective-col">
+                <p class="retrospective-text"><strong>Что выстрелило:</strong> Пошаговый трекер движения средств и статусная модель полностью сняли тревожность покупателей при сделках.</p>
+              </div>
+              <div class="retrospective-col">
+                <p class="retrospective-text"><strong>Что улучшить в v2.0:</strong> Проработать модуль автоматической фильтрации типовых претензий и расширить дашборд аналитики продаж продавца.</p>
+              </div>
+            </div>
+          </div>
+
+         <nav class="case-nav-footer">
+    <a href="whipcash-ru.html" class="case-nav-card prev">
+        <img src="images/arrow.svg" alt="" class="case-nav-arrow">
+        <div class="nav-card-meta">
+            <span class="nav-card-title">ПРЕДЫДУЩИЙ</span>
+            <span class="nav-card-subtitle">Whipcash Marketplace</span>
+        </div>
+    </a>
+    
+    <a href="snt-ru.html" class="case-nav-card next">
+        <div class="nav-card-meta text-right">
+            <span class="nav-card-title">СЛЕДУЮЩИЙ</span>
+            <span class="nav-card-subtitle">SNT Management</span>
+        </div>
+        <img src="images/arrow.svg" alt="" class="case-nav-arrow">
+    </a>
+</nav>
+
+
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- TOP BUTTON -->
+  <button class="top-button" aria-label="Наверх">
+    <img src="images/arrow.svg" alt="" class="top-button-icon">
+  </button>
+
+  <script>
+    const topButton = document.querySelector('.top-button');
+    if (topButton) {
+      topButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      window.addEventListener('scroll', () => {
+        const showAfter = window.innerHeight * 0.8;
+        topButton.classList.toggle('top-button--visible', window.scrollY > showAfter);
+      });
+    }
+  </script>
+
+</body>
+</html>

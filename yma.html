@@ -3,128 +3,222 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YMA case</title>
+  <title>YMA case — Product Design</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;600;700&family=Jersey+10&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Jersey+10&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="page-yma">
   <div class="page-container">
 
-    <!-- тот же header, что и на главной -->
-   <header class="header">
-  <a href="CV.pdf" class="header-link header-link--left">
-    <img src="images/download.svg" alt="" class="header-icon">
-    <span class="header-text">download cv</span>
-  </a>
+    <!-- HEADER -->
+    <header class="header">
+      <a href="index.html" class="logo" aria-label="Home">
+        <img src="images/logo.svg" alt="Logo" class="logo-img">
+      </a>
 
-  <div class="logo">
-  <a href="index.html">
-    <img src="images/logo.svg" alt="Logo">
-  </a>
-</div>
+      <nav class="header-nav">
+        <a href="CV.pdf" class="header-link" target="_blank" rel="noopener noreferrer">
+          <img src="images/download.svg" alt="" class="header-icon">
+          <span class="header-text">download cv</span>
+        </a>
 
-  <a href="https://t.me/zickzackk" class="header-link header-link--right">
-    <span class="header-text">telegram</span>
-    <img src="images/telegram.svg" alt="" class="header-icon">
-  </a>
-</header>
+        <a href="https://t.me/zickzackk" class="header-link" target="_blank" rel="noopener noreferrer">
+          <img src="images/telegram.svg" alt="" class="header-icon">
+          <span class="header-text">telegram</span>
+        </a>
 
-<nav class="breadcrumbs">
+                <!-- ЯЗЫКОВОЙ ПЕРЕКЛЮЧАТЕЛЬ: активен ENG -->
+        <div class="lang-switcher">
+          <a href="#" class="lang-link">ru</a>
+          <span class="lang-separator">/</span>
+          <a href="#" class="lang-link active">eng</a>
+        </div>
+
+      </nav>
+    </header>
+
+    <!-- BREADCRUMBS -->
+    <nav class="breadcrumbs">
       <a href="index.html" class="breadcrumbs-link">works</a>
       <span class="breadcrumbs-separator">/</span>
       <span class="breadcrumbs-current">yma-case</span>
     </nav>
 
-
-
+    <!-- MAIN CASE CONTENT -->
     <main class="case-main">
 
-  <!-- обложка кейса -->
-<section class="case-section case-section--hero case-hero--yma">
-  <img src="images/yma-hero.png" alt="yma hero" class="case-image case-hero-image">
-</section>
+      <!-- 1. HERO COVER -->
+      <section class="case-section case-section--hero case-hero--yma">
+        <img src="images/yma-hero.png" alt="YMA Hero Cover" class="case-image case-hero-image">
+      </section>
 
-  <!-- краткое описание кейса -->
-  <section class="case-summary">
-    <div class="case-summary-card">
-      <h2 class="case-summary-title">YOU MAKE UP (YMA)</h2>
-      <p class="case-summary-text">
-        PROJECT NAME
-      </p>
-    </div>
+      <!-- 2. PARAMETERS TRIAD -->
+      <section class="case-summary case-summary--triad">
+        <div class="case-summary-card">
+          <h2 class="case-summary-title">BEAUTY EDTECH</h2>
+          <p class="case-summary-text">PROJECT NICHE</p>
+        </div>
 
-    <div class="case-summary-card">
-      <h2 class="case-summary-title">MARCH 2024 – APRIL 2024</h2>
-      <p class="case-summary-text">
-        REALIZATION
-      </p>
-    </div>
-  </section>
+        <div class="case-summary-card">
+          <h2 class="case-summary-title">SOLO PRODUCT DESIGNER</h2>
+          <p class="case-summary-text">ROLE</p>
+        </div>
 
-  <!-- блок 1 -->
-  <section class="case-section">
-   <img src="images/yma-1.png" alt="YMA 1" class="case-image">
-  </section>
+        <div class="case-summary-card case-summary-card--impact">
+          <h2 class="case-summary-title accent-green">100% TASK SUCCESS</h2>
+          <p class="case-summary-text">MAIN IMPACT</p>
+        </div>
+      </section>
 
-  <!-- блок 2 -->
-  <section class="case-section">
-  <img src="images/yma-2.png" alt="YMA 2" class="case-image">
-  </section>
+      <!-- 3. ABOUT & CHALLENGE -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">ABOUT</h2>
+          <p class="narrative-lead">
+            A mobile educational platform featuring step-by-step interactive makeup practice and personalized learning tracks tailored specifically for the Asian beauty market.
+          </p>
+        </div>
 
-  <!-- блок 3 -->
-  <section class="case-section">
-  <img src="images/yma-3.png" alt="YMA 3" class="case-image">
-  </section>
+        <div class="narrative-block">
+          <h3 class="narrative-subtitle">Context &amp; Challenge</h3>
+          <div class="narrative-body">
+            <p><strong>Business Goal:</strong> Conceptualize and validate a micro-modular EdTech mobile app teaching makeup techniques, tailored to the behavioral patterns of Asian audiences.</p>
+            <p><strong>User Pain Points:</strong> Long, unstructured video tutorials caused disengagement; learners lost track of brush techniques and abandoned lessons due to lack of step-by-step practice pacing.</p>
+            <p><strong>Constraints:</strong> Tight 6-week turnaround, solo end-to-end design across iOS/Android, and preparing a developer-ready component design system.</p>
+          </div>
+        </div>
+      </section>
 
-  <!-- блок 4 -->
-  <section class="case-section">
-   <img src="images/yma-4.png" alt="YMA 4" class="case-image">
-  </section>
+      <!-- 4. VISUAL 1 -->
+      <section class="case-section">
+        <img src="images/yma-1.png" alt="YMA UI Overview" class="case-image">
+      </section>
 
-  <!-- блок 5 -->
-  <section class="case-section">
-    <img src="images/yma-5.png" alt="YMA 5" class="case-image">
-  </section>
+      <!-- 5. STRATEGY & MVP SCOPING -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">Strategy &amp; MVP Scoping</h2>
+          <div class="narrative-body">
+            <p><strong>Deliberately cut from MVP:</strong> Removed the in-app social feed, live 1-on-1 expert video calls, and complex competitive gamification to maintain pure focus on learning retention.</p>
+            <p><strong>Core Loop:</strong> 3-question skill assessment → Micro-lesson flow: "Video Step → Auto-Pause → Practice" → Milestone check-in tracked on personal progress path.</p>
+          </div>
+        </div>
+      </section>
 
-  <!-- блок 6 -->
-  <section class="case-section">
-    <img src="images/yma-6.png" alt="YMA 6" class="case-image">
-  </section>
+      <!-- 6. VISUAL 2 -->
+      <section class="case-section">
+        <img src="images/yma-2.png" alt="YMA Step-by-Step Flow" class="case-image">
+      </section>
 
-</main>
+      <!-- 7. EXECUTION & UX ARCHITECTURE -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">Execution &amp; UX Architecture</h2>
+          <div class="narrative-body">
+            <p><strong>Key Flows:</strong> Engineered an interactive video player with smart auto-pauses after critical brush movements, paired with a 3-tier difficulty model (Beginner / Intermediate / Pro).</p>
+            <p><strong>System Scalability:</strong> Built a modular mobile UI library in Figma with atomic step blocks, responsive video player controls, and comprehensive interaction states.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. VISUALS 3, 4, 5 -->
+      <section class="case-section">
+        <img src="images/yma-3.png" alt="YMA Gamification & Tasks" class="case-image">
+      </section>
+
+      <section class="case-section">
+        <img src="images/yma-4.png" alt="YMA User Steps & Auth" class="case-image">
+      </section>
+
+      <section class="case-section">
+        <img src="images/yma-5.png" alt="YMA AR Face Tracking" class="case-image">
+      </section>
+
+      <!-- 9. BOTTOM SECTION (923px Hug Container) -->
+      <section class="case-bottom-container">
+        <div class="case-bottom-content">
+          
+          <!-- METRICS / ACHIEVEMENTS -->
+          <div class="case-metrics-grid">
+            <div class="metric-col">
+              <span class="metric-number">90 SEC</span>
+              <p class="metric-desc">Average item listing time down from 8 minutes via wizard</p>
+            </div>
+            <div class="metric-col">
+              <span class="metric-number">3 ROLES</span>
+              <p class="metric-desc">Harmoniously integrated into a unified design system with zero UX conflicts</p>
+            </div>
+            <div class="metric-col">
+              <span class="metric-number">1 SCREEN</span>
+              <p class="metric-desc">Full transaction timeline and audit log for dispute resolution</p>
+            </div>
+          </div>
+
+          <!-- RETROSPECTIVE -->
+          <div class="case-retrospective">
+            <h2 class="retrospective-title">RETROSPECTIVE</h2>
+            <div class="retrospective-grid">
+              <div class="retrospective-col">
+                <p class="retrospective-text">What worked: The guided listing wizard and clean, noise-free checkout eliminated trust barriers for US buyers and sellers.</p>
+              </div>
+              <div class="retrospective-col">
+                <p class="retrospective-text">Next in v2.0: Introduce automated dispute categorization using LLM triage and expand seller analytics dashboards.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PREVIOUS / NEXT PROJECT CARDS -->
+          <nav class="case-nav-footer">
+            <a href="whipcash.html" class="case-nav-card prev">
+              <img src="images/arrow.svg" alt="" class="case-nav-arrow">
+              <div class="nav-card-meta">
+                <span class="nav-card-title">PREVIOUS PROJECT</span>
+                <span class="nav-card-subtitle">Fintech Dashboard</span>
+              </div>
+            </a>
+            
+            <a href="skinity.html" class="case-nav-card next">
+              <div class="nav-card-meta">
+                <span class="nav-card-title">NEXT PROJECT</span>
+                <span class="nav-card-subtitle">Fintech Dashboard</span>
+              </div>
+              <img src="images/arrow.svg" alt="" class="case-nav-arrow">
+            </a>
+          </nav>
+
+        </div>
+      </section>
+
+    </main>
 
   </div>
+
+  <!-- TOP BUTTON -->
   <button class="top-button" aria-label="Back to top">
-  <img src="images/arrow.svg" alt="" class="top-button-icon">
-</button>
-<script>
-  const topButton = document.querySelector('.top-button');
+    <img src="images/arrow.svg" alt="" class="top-button-icon">
+  </button>
 
-  if (topButton) {
-    // клик — скролл наверх
-    topButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+  <script>
+    const topButton = document.querySelector('.top-button');
+    if (topButton) {
+      topButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
-    });
 
-    // показ / скрытие по скроллу
-    window.addEventListener('scroll', () => {
-      const showAfter = window.innerHeight * 0.8; // почти высота первого экрана
-
-      if (window.scrollY > showAfter) {
-        topButton.classList.add('top-button--visible');
-      } else {
-        topButton.classList.remove('top-button--visible');
-      }
-    });
-  }
-</script>
+      window.addEventListener('scroll', () => {
+        const showAfter = window.innerHeight * 0.8;
+        if (window.scrollY > showAfter) {
+          topButton.classList.add('top-button--visible');
+        } else {
+          topButton.classList.remove('top-button--visible');
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
