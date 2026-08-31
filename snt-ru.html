@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кейс СНТ — Мария Мочалова</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Jersey+10&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-snt">
+  <div class="page-container">
+
+    <!-- HEADER -->
+    <header class="header">
+      <a href="index-ru.html" class="logo" aria-label="Главная">
+        <img src="images/logo.svg" alt="Logo" class="logo-img">
+      </a>
+
+      <nav class="header-nav">
+        <a href="CV-ru.pdf" class="header-link" target="_blank" rel="noopener noreferrer">
+          <img src="images/download.svg" alt="" class="header-icon">
+          <span class="header-text">download cv</span>
+        </a>
+
+        <a href="https://t.me/zickzackk" class="header-link" target="_blank" rel="noopener noreferrer">
+          <img src="images/telegram.svg" alt="" class="header-icon">
+          <span class="header-text">telegram</span>
+        </a>
+
+        <div class="lang-switcher">
+    <a href="#" class="lang-link active">ru</a>
+    <span class="lang-separator">/</span>
+    <a href="snt.html" class="lang-link">eng</a>
+</div>
+
+      </nav>
+    </header>
+
+    <!-- BREADCRUMBS -->
+    <nav class="breadcrumbs">
+      <a href="index-ru.html" class="breadcrumbs-link">projects</a>
+      <span class="breadcrumbs-separator">/</span>
+      <span class="breadcrumbs-current">snt-case</span>
+    </nav>
+
+    <!-- MAIN CASE CONTENT -->
+    <main class="case-main">
+
+      <!-- HERO COVER -->
+      <section class="case-section case-section--hero case-hero--snt">
+        <img src="images/snt-hero.png" alt="SNT Hero Cover" class="case-image case-hero-image">
+      </section>
+
+      <!-- SNAPSHOT CARDS -->
+      <section class="case-summary case-summary--triad">
+        <div class="case-summary-card">
+          <h2 class="case-summary-title">SAAS &amp; GOVTECH</h2>
+          <p class="case-summary-text">СФЕРА</p>
+        </div>
+
+        <div class="case-summary-card">
+          <h2 class="case-summary-title">PRODUCT DESIGNER</h2>
+          <p class="case-summary-text">РОЛЬ</p>
+        </div>
+
+        <div class="case-summary-card case-summary-card--impact">
+          <h2 class="case-summary-title accent-green">АВТОПРОТОКОЛ В 1 КЛИК</h2>
+          <p class="case-summary-text">РЕЗУЛЬТАТ</p>
+        </div>
+      </section>
+
+      <!-- ABOUT & CHALLENGE -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">О ПРОЕКТЕ</h2>
+          <p class="narrative-lead">
+            Специализированная SaaS-экосистема для цифровизации управления СНТ, объединяющая председателей, бухгалтеров и садоводов в прозрачном юридическом контуре.
+          </p>
+        </div>
+
+        <div class="narrative-block">
+          <h3 class="narrative-subtitle">Контекст и Проблема</h3>
+          <div class="narrative-body">
+            <p><strong>Бизнес-задача:</strong> Спроектировать B2B2C SaaS-платформу для автоматизации взносов, голосований и отчетности в садовых товариществах в строгом соответствии с ФЗ-217.</p>
+            <p><strong>Пользовательская боль:</strong> Бухгалтеры тонут в ручных таблицах Excel; жители старше 50 лет испытывают тревогу при онлайн-оплатах и пропускают очные собрания.</p>
+            <p><strong>Ограничения:</strong> Строгие юридические нормы, необходимость максимальной доступности по стандарту WCAG и поддержка устаревших браузеров.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VISUAL 1 -->
+      <section class="case-section">
+        <img src="images/snt-1.png" alt="SNT Dashboard Overview" class="case-image">
+      </section>
+
+      <!-- STRATEGY & MVP SCOPING -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">Приоритизация и Скоупинг</h2>
+          <div class="narrative-body">
+            <p><strong>Что намеренно вырезали из MVP:</strong> Отказались от внутреннего маркетплейса «СНТ-Базар» и чатов между соседями, сфокусировавшись на безупречном биллинге и юридически чистых голосованиях.</p>
+            <p><strong>Core Loop:</strong> Формирование начисления → SMS-уведомление жителю → Быстрая оплата в 2 клика без регистрации → Автоматическая фиксация в реестре и выгрузка чека.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VISUALS 2, 3 -->
+      <section class="case-section">
+        <img src="images/snt-2.png" alt="SNT Finance UI" class="case-image">
+      </section>
+
+      <section class="case-section">
+        <img src="images/snt-3.png" alt="SNT Voting System" class="case-image">
+      </section>
+
+      <!-- EXECUTION & UX ARCHITECTURE -->
+      <section class="case-narrative-section">
+        <div class="narrative-block">
+          <h2 class="narrative-title">Реализация и UX-Логика</h2>
+          <div class="narrative-body">
+            <p><strong>Онбординг и активация:</strong> Простой сценарий оплаты по лицевому счету без обязательного создания личного кабинета, крупный шрифт (базовый 16px) и контрастные кнопки.</p>
+            <p><strong>Ключевые флоу:</strong> Понятный конструктор онлайн-голосований с фиксацией кворума и защищенный личный кабинет председателя с выгрузкой отчетов в 1С.</p>
+            <p><strong>Системность:</strong> Выстроили Accessibility UI-кит (контрастность текста по AAA/AA, крупные кликабельные чекбоксы, оптимизация под чтение с экранов телефонов).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VISUALS 4, 5, 6, 7 -->
+      <section class="case-section">
+        <img src="images/snt-4.png" alt="SNT Screen 4" class="case-image">
+      </section>
+
+      <section class="case-section">
+        <img src="images/snt-5.png" alt="SNT Screen 5" class="case-image">
+      </section>
+
+      <section class="case-section">
+        <img src="images/snt-6.jpg" alt="SNT Screen 6" class="case-image">
+      </section>
+
+      <section class="case-section">
+        <img src="images/snt-7.png" alt="SNT Screen 7" class="case-image">
+      </section>
+
+      <section class="case-bottom-container">
+        <div class="case-bottom-content">
+          
+          <div class="case-metrics-grid">
+            <div class="metric-col">
+              <span class="metric-number">100%</span>
+              <p class="metric-desc">Соответствие сформированных протоколов требованиям 217-ФЗ</p>
+            </div>
+            <div class="metric-col">
+              <span class="metric-number">2 КЛИКА</span>
+              <p class="metric-desc">От перехода по SMS-ссылке до подтверждения оплаты взноса через СБП</p>
+            </div>
+            <div class="metric-col">
+              <span class="metric-number">WCAG AA</span>
+              <p class="metric-desc">Стандарт доступности интерфейса для комфортной работы аудитории 50+</p>
+            </div>
+          </div>
+
+          <div class="case-retrospective">
+            <h2 class="retrospective-title">РЕТРОСПЕКТИВА</h2>
+            <div class="retrospective-grid">
+              <div class="retrospective-col">
+                <p class="retrospective-text">Что выстрелило: Ставка на предельную простоту мобильного веба и Accessibility UI позволила пожилым садоводам без проблем пройти путь голосования и оплаты на тестах.</p>
+              </div>
+              <div class="retrospective-col">
+                <p class="retrospective-text">Проработать модуль автоматического считывания показаний электросчетчиков по фото с камеры смартфона.</p>
+              </div>
+            </div>
+          </div>
+
+          <nav class="case-nav-footer">
+    <a href="wheel-ru.html" class="case-nav-card prev">
+        <img src="images/arrow.svg" alt="" class="case-nav-arrow">
+        <div class="nav-card-meta">
+            <span class="nav-card-title">ПРЕДЫДУЩИЙ</span>
+            <span class="nav-card-subtitle">Wheel Urban Mobility</span>
+        </div>
+    </a>
+    
+    <a href="skinity-ru.html" class="case-nav-card next">
+        <div class="nav-card-meta text-right">
+            <span class="nav-card-title">СЛЕДУЮЩИЙ</span>
+            <span class="nav-card-subtitle">Skinity Gaming &amp; FinTech</span>
+        </div>
+        <img src="images/arrow.svg" alt="" class="case-nav-arrow">
+    </a>
+</nav>
+
+
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- TOP BUTTON -->
+  <button class="top-button" aria-label="Наверх">
+    <img src="images/arrow.svg" alt="" class="top-button-icon">
+  </button>
+
+  <script>
+    const topButton = document.querySelector('.top-button');
+    if (topButton) {
+      topButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      window.addEventListener('scroll', () => {
+        const showAfter = window.innerHeight * 0.8;
+        topButton.classList.toggle('top-button--visible', window.scrollY > showAfter);
+      });
+    }
+  </script>
+
+</body>
+</html>
