@@ -710,7 +710,7 @@ body {
 }
 
 /* MOBILE 390px */
-@media (max-width: 430px) {
+@media (max-width: 768px) {
   /* PAGE CONTAINER */
   .page-container {
     width: 100%;
@@ -1343,4 +1343,119 @@ body {
   .nav-card-subtitle {
     font-size: 16px;
   }
+}
+
+/* ==================== ТОЧЕЧНЫЕ ПРАВКИ ДЛЯ КЕЙСОВ НА МОБИЛКЕ ==================== */
+@media (max-width: 768px) {
+
+  /* 1. Обложка внутренней страницы проекта: 350px на 220px */
+  .case-section--hero {
+    width: 100%;
+    max-width: 350px !important;
+    height: 220px !important;
+    border-radius: 28px !important;
+    margin: 12px auto 24px !important;
+    overflow: hidden !important;
+  }
+
+  .case-section--hero img,
+  .case-hero-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+  }
+
+  /* 2. Заголовки вдоль текста внутри кейсов: 20px */
+  .narrative-title,
+  .narrative-subtitle,
+  .case-text-title {
+    font-size: 20px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* 3. Основной текст внутри кейсов: 16px */
+  .narrative-lead,
+  .narrative-body p,
+  .case-text-body,
+  .case-text-body p {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* 4. Ограничение ширины текстовых блоков под мобильный экран */
+  .case-narrative-section,
+  .narrative-block,
+  .case-combo,
+  .case-text-block {
+    max-width: 350px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+/* ==================== ТОЛЬКО МОБИЛЬНАЯ ВЕРСИЯ (ДО 768px) ==================== */
+@media (max-width: 768px) {
+  
+  /* Карточки со статистикой вверху кейса */
+  .case-summary,
+  .case-summary--triad {
+    max-width: 350px !important;
+    margin: 0 auto 24px !important; /* Умеренный отступ снизу до текста */
+    gap: 12px !important;           /* Равномерный шаг между карточками */
+    padding: 0 !important;
+  }
+
+  .case-summary-card {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 16px 20px !important;  /* Одинаковые симметричные отступы внутри */
+    border-radius: 20px !important;
+    justify-content: center !important;
+  }
+
+  .case-summary-title {
+    font-size: 18px !important;
+    margin-top: 0 !important;
+    margin-bottom: 4px !important;
+    line-height: 1.15 !important;
+  }
+
+  .case-summary-text {
+    font-size: 13px !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+  }
+    /* Превью кейсов на главной (330px на 180px) */
+  .case-card-inner {
+    width: 100%;
+    max-width: 350px !important;
+    height: auto !important;
+    padding: 10px !important;
+    border-radius: 28px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .case-image-wrap {
+    width: 330px !important;
+    max-width: 100% !important;
+    height: 180px !important;
+    border-radius: 20px !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+    background-color: #181818 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .case-image-wrap .case-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
 }
