@@ -1,1461 +1,2184 @@
-/* Сброс стилей и базовые настройки */
+:root {
+  --bg-page: #ffffff;
+  --bg-surface: #f6f6f8;
+  --bg-subtle: #fbfbfb;
+  
+  --text-main: #111111;
+  --text-secondary: #4a4a4e;
+  --text-muted: #707579;
+  --text-subtle: #8e8e93;
+  
+  --border-light: #ebebeb;
+  --border-subtle: #f0f0f2;
+  --border-chip: #e8e8ec;
+  --placeholder-border: #e2e2e6;
+  
+  /* Акцентный интерактивный синий оставлен только для ховеров ссылок */
+  --accent-blue: #2f6bf2;
+  
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --container-width: 880px;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: "Rubik", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  background-color: #1D1D1D;
-  color: #ffffff;
-  font-size: 16px;
-  line-height: 1.6;
-  overflow-x: hidden;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.65;
+  font-size: 17px;
 }
 
-.page-container {
-    width: 1397px;
-    margin: 0 auto;
-    padding: 0 0px;
-    box-sizing: border-box;
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-/* ==================== HEADER ==================== */
+/* =========================================================
+   1. ШАПКА
+   ========================================================= */
 .header {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
-  max-width: 1400px;
-  height: 66px;
-  padding: 0 20px;
+  padding: 24px 0;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.header__inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(29, 29, 29, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  z-index: 100;
-  box-sizing: border-box;
 }
 
-/* Логотип */
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.logo-img {
-  width: 48px;
-  height: 45px;
-  display: block;
-}
-
-/* Правый блок навигации */
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.header-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.8);
-  font-family: "Jersey 10", sans-serif;
-  font-size: 32px;
-  line-height: 1;
-  text-transform: lowercase;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.header-link:hover {
-  color: #ffffff;
-  transform: translateY(-1px);
-}
-
-.header-icon {
-  width: 24px;
-  height: 24px;
-  display: block;
-}
-
-/* ==================== LANGUAGE SWITCHER ==================== */
-.lang-switcher {
+.header__back-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: "Jersey 10", system-ui, -apple-system, sans-serif;
-  font-size: 32px;
-  line-height: 1;
-  user-select: none;
-}
-
-/* Неактивный язык — 50% белого */
-.lang-link {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.5);
-  text-transform: lowercase;
-  transition: color 0.2s ease;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.15s ease;
 }
 
-/* Наведение на неактивный язык — 70% белого */
-.lang-link:hover:not(.active) {
-  color: rgba(255, 255, 255, 0.7);
+.header__back-link:hover {
+  color: var(--text-main);
 }
 
-/* Выбранный активный язык — 100% белый */
-.lang-link.active {
-  color: rgba(255, 255, 255, 1);
-  cursor: default;
-  pointer-events: none; /* отключает клик по уже активному языку */
+.header__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e5e5ea;
+  display: inline-block;
+  transition: opacity 0.2s;
 }
 
-/* Разделитель слэш */
-.lang-separator {
-  color: rgba(255, 255, 255, 0.35);
+.header__avatar:hover {
+  opacity: 0.8;
 }
 
-/* Адаптив шапки (Mobile) */
-@media (max-width: 768px) {
-  .page-container {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 16px;
-  }
-
-  .header {
-    height: 56px;
-    padding: 0 16px;
-    left: 0;
-    transform: none;
-    width: 100%;
-  }
-
-  .logo-img {
-    width: 38px;
-    height: 36px;
-  }
-
-  .header-nav {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 16px;
-  }
-
-  /* Прижимаем переключатель языков вплотную к логотипу слева */
-  .lang-switcher {
-    order: -1;
-    margin-right: auto;
-    margin-left: 24px;
-    font-size: 24px;
-    line-height: 1;
-  }
-
-  /* Скрываем текстовые подписи кнопок, оставляя только зеленые иконки */
-  .header-link .header-text {
-    display: none !important;
-  }
-
-  .header-link {
-    width: auto !important;
-    min-width: 36px;
-    min-height: 36px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 !important;
-  }
-
-  .header-icon {
-    width: 22px;
-    height: 22px;
-    display: block;
-  }
-}
-
-/* Hero Section */
-.hero {
-    padding: 140px 0px 80px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.hero-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-    width: 100%;
-}
-
-.title-row {
-    display: inline-flex;
-    align-items: center;
-    gap: 24px;
-    margin-bottom: 8px;
-}
-
-.title-first {
-    font-family: 'Rubik', sans-serif;
-    font-weight: 600;
-    font-size: 100px;
-    line-height: 1;
-    letter-spacing: -0.01em;
-    color: #FFFFFF;
-}
-
-.text-card {
-    position: relative;
-    width: 895px;
-    height: 481px;
-    background: #242424;
-    border-radius: 60px;
-    padding: 60px 78px 60px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    background-image:
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 19px,
-            rgba(29, 29, 29, 0.8) 19px,
-            rgba(29, 29, 29, 0.8) 21px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 19px,
-            rgba(29, 29, 29, 0.8) 19px,
-            rgba(29, 29, 29, 0.8) 21px
-        );
-    background-size: 20px 20px;
-}
-
-.hero-title {
-    font-family: 'Rubik', sans-serif;
-    font-weight: 600;
-    font-size: 104px;
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-    margin: 0 0 16px 0;
-    color: #FFFFFF;
-}
-
-.badge {
-  display: inline-flex;
-  flex-direction: column;
+.header__nav {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 201px;
-  height: 85px;
-  background: rgba(81, 255, 1, 0.25);
-  backdrop-filter: blur(20px);
-  border-radius: 84px;
-  transform: rotate(9.94deg) translateY(-12px);
-  box-shadow: 0 0 60px rgba(81, 255, 1, 0.239),
-              inset 0 0 40px rgba(81, 255, 1, 0.2);
-  font-family: 'Rubik', sans-serif;
+  gap: 28px;
+}
+
+.nav-item {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 14px;
   font-weight: 600;
-  font-size: 29px;
-  line-height: 1.1;
-  color: #51ff01;
-  text-transform: lowercase;
+  letter-spacing: 0.04em;
+  transition: opacity 0.2s;
+}
+
+.nav-item:hover {
+  opacity: 0.6;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--text-subtle);
+  padding: 0;
+}
+
+.lang-btn.active {
+  color: var(--text-main);
+}
+
+.lang-sep {
+  color: var(--text-subtle);
+}
+
+/* =========================================================
+   2. ГЛАВНАЯ СТРАНИЦА: HERO И КЕЙСЫ
+   ========================================================= */
+.hero-section {
+  max-width: var(--container-width);
+  margin: 70px auto 60px;
+  padding: 0 24px;
   text-align: center;
 }
 
-.hero-description {
-    font-family: 'Rubik', sans-serif;
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 1.4;
-    color: rgba(255, 255, 255, 0.8);
-    max-width: 740px;
-    margin: 0;
+.hero-title {
+  font-size: clamp(34px, 5vw, 54px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: #000000;
+  margin-bottom: 18px;
 }
 
-.hero-text {
-    flex: 1;
-    max-width: none;
+.hero-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  font-weight: 400;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.55;
 }
 
-.hero-image {
-    flex-shrink: 0;
-    width: 480px;
-    height: 480px;
-    position: relative;
-}
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Cases Section */
-.cases {
-  margin-top: 100px;
-  padding: 0 0 80px;
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cases-title {
-  font-family: 'Rubik', sans-serif;
-  font-size: 42px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 32px;
-}
-
-.cases-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  position: relative;
-  z-index: 1;
+.cases-section {
+  padding-bottom: 60px;
 }
 
 .case-card {
+  margin-bottom: 84px;
+}
+
+.case-card__visual-link {
   text-decoration: none;
-  color: inherit;
   display: block;
-  position: relative;
-  z-index: 2;
+}
+
+.case-card__stage {
+  background-color: var(--bg-surface);
+  background-image: radial-gradient(#dcdcde 1px, transparent 1px);
+  background-size: 16px 16px;
+  border-radius: 24px;
+  padding: 44px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border-subtle);
   cursor: pointer;
 }
 
- .case-section--hero {
-    max-width: 1392px;
-    margin: 16px auto 24px;
-    height: 640px;
-    border-radius: 32px;
-    overflow: hidden;
-    background-color: #181818;
-  }
-
-   .case-section--hero img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-  }
-
-.case-card-inner {
+.screen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   width: 100%;
-  max-width: 686px;
-  height: 551px;
-  background: #242424;
-  border-radius: 45px;
-  overflow: hidden;
-  position: relative;
-  padding: 10px 10px 30px;
-  box-sizing: border-box;
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 19px,
-      rgba(29, 29, 29, 0.8) 19px,
-      rgba(29, 29, 29, 0.8) 21px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 19px,
-      rgba(29, 29, 29, 0.8) 19px,
-      rgba(29, 29, 29, 0.8) 21px
-    );
-  background-size: 20px 20px;
-  transition: background-color 0.25s ease, box-shadow 0.25s ease,
-              transform 0.25s ease;
 }
 
-.case-card:hover .case-card-inner {
-  background-color: #2e2e2e56;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.177);
-  transform: translateY(-10px);
-}
-
-.case-card:hover .case-arrow {
-  transform: rotate(45deg);
-}
-
-.case-image-wrap {
-  position: relative;
-  width: 100%;
-  height: 358px;
-  border-radius: 35px;
-  overflow: hidden;
-  border: 1px solid rgba(249, 244, 244, 0.2);
-}
-
-.case-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-  background-color: #181818;
-}
-
-.case-content {
-  position: relative;
-  margin-top: 40px;
-  padding: 0 20px;
-}
-
-.case-title-row {
+.screen-box {
+  aspect-ratio: 9 / 16;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid var(--placeholder-border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
+  justify-content: center;
 }
 
-.case-title {
-  font-family: "Rubik", sans-serif;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 1.2;
-  color: #ffffff;
+.screen-box__label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-subtle);
+  letter-spacing: -0.01em;
 }
 
-.case-arrow {
-  width: 40px;
-  height: 40px;
-  transform: translateX(0);
-  transition: transform 0.25s ease;
+.case-card__details {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 44px;
+  margin-top: 28px;
+  align-items: start;
 }
 
-.case-text {
-  max-width: 562px;
-  font-family: "Rubik", sans-serif;
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 1.38;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-/* Адаптивность */
-@media (max-width: 1024px) {
-  .hero-image {
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .hero-title {
-    font-size: 56px;
-  }
-}
-
-@media (max-width: 768px) {
-  .header {
-    padding: 20px 24px;
-  }
-
-  .hero {
-    padding: 140px 40px 80px;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-
-  .hero-title {
-    font-size: 44px;
-  }
-
-  .cases {
-    padding: 40px 24px;
-  }
-
-  .cases-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .case-card:last-child {
-    grid-column: 1;
-    max-width: 100%;
-  }
-}
-
-/* ===== Case pages ===== */
-/* ===== breadcrumbs ===== */
-
-.breadcrumbs {
-  max-width: 1397px;
-  margin: 120px auto 12px;
-  padding: 0 55px;
+.case-card__title-row {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-bottom: 10px;
 }
 
-.breadcrumbs-link {
+.case-card__icon {
+  font-size: 18px;
+  color: #000000;
+}
+
+.case-card__title-link {
+  color: #000000;
   text-decoration: none;
-  font-family: "Jersey 10", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 32px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  transition: color 0.2s;
+}
+
+.case-card__title-link:hover {
+  color: var(--accent-blue);
+}
+
+.case-card__description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+/* Синхронизированные скругленные плашки на главной */
+.case-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-chip {
+  font-family: var(--font-sans);
+  font-size: 13px;
   line-height: 1;
-  text-transform: lowercase;
-  color: #d2d2d2;
-  -webkit-font-smoothing: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  font-weight: 450;
+  color: #4e4e52;
+  background-color: #ffffff;
+  border: 1px solid var(--border-chip);
+  border-radius: 9999px; /* Полное идеальное скругление */
+  padding: 7px 16px;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
 }
 
-.breadcrumbs-link:hover {
-  opacity: 0.8;
-  transform: translateY(-1px);
+.tag-chip--label {
+  color: #666668;
+  background: #fbfbfb;
 }
 
-.breadcrumbs-separator {
-  font-family: "Jersey 10", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 32px;
-  line-height: 1;
-  text-transform: lowercase;
-  color: #d2d2d2;
-  -webkit-font-smoothing: none;
+.tag-chip--value {
+  color: #111111;
+  font-weight: 550;
+  background-color: #f4f4f6;
+  border-color: #eaeaea;
 }
 
-.breadcrumbs-current {
-  font-family: "Jersey 10", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 32px;
-  line-height: 1;
-  text-transform: lowercase;
-  color: #ffffff;
-  -webkit-font-smoothing: none;
-  cursor: default;
+.achievements-heading {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+  color: #000000;
 }
 
-/* Контент кейса */
-
-.case-main {
-  padding-top: 16px;
-  padding-bottom: 80px;
-}
-
-/* Фреймы под картинки */
-.case-section {
-  max-width: 1392px;
-  margin: 0 auto 80px;
-  border-radius: 45px;
-  background-color: #181818;
-  overflow: hidden;
-}
-
-.case-section:not(.case-section--hero) {
-  height: auto; 
-}
-
-/* краткое описание между обложкой и первым фреймом */
-.case-summary {
-  max-width: 1392px;
-  margin: 0 auto 80px;
-  padding: 0 4px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.case-summary-card {
-  height: 138px;
-  border-radius: 40px;
-  background-color: #242424;
-  padding: 24px 32px;
+.achievements-list {
+  list-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 19px,
-      rgba(29, 29, 29, 0.8) 19px,
-      rgba(29, 29, 29, 0.8) 21px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 19px,
-      rgba(29, 29, 29, 0.8) 19px,
-      rgba(29, 29, 29, 0.8) 21px
-    );
-  background-size: 20px 20px;
+  gap: 12px;
 }
 
-.case-summary-title {
-  font-family: "Rubik", sans-serif;
+.achievements-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.achievements-list li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--text-subtle);
+}
+
+.achievements-list strong {
+  color: #111111;
   font-weight: 600;
-  font-size: 28px;
-  letter-spacing: 0.03em;
+}
+
+/* =========================================================
+   3. ГЛАВНАЯ: АККОРДЕОН ОПЫТА РАБОТЫ (ЕДИНЫЙ СТИЛЬ)
+   ========================================================= */
+.experience-section {
+  padding-bottom: 70px;
+}
+
+/* Одинаковый серый заголовок секции, как на внутренней */
+.section-divider {
+  font-family: var(--font-sans);
+  font-size: 13px;
   text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  color: var(--text-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 12px;
   margin-bottom: 8px;
-  color: #ffffffce;
 }
 
-.case-summary-text {
-  font-family: "Rubik", sans-serif;
-  font-weight: 300;
+.exp-accordion-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-item {
+  border-bottom: 1px solid #f2f2f4;
+}
+
+.exp-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+}
+
+.exp-trigger__brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex: 1;
+}
+
+.exp-role {
   font-size: 16px;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.557);
+  font-weight: 500;
+  color: #111111;
+  transition: color 0.2s ease;
 }
 
-/* Блоки "текст + картинка" для wheel */
-.case-combo {
-  max-width: 1392px;
-  margin: 0 auto 80px !important;
+.exp-separator {
+  color: #c7c7cc;
+  font-size: 14px;
 }
 
-.case-combo .case-section {
-  margin: 0 !important;
-  margin-bottom: 0 !important;
+.exp-company {
+  font-size: 15px;
+  color: var(--text-secondary);
+  font-weight: 400;
+  transition: color 0.2s ease;
 }
 
-.case-text-block {
-  max-width: 1392px;
-  margin-bottom: 40px!important;
-  display: grid;
-  grid-template-columns: 400px 968px;
+.exp-item.open .exp-role {
+  color: #111111;
+  font-weight: 600;
+}
+
+.exp-item.open .exp-company {
+  color: #111111;
+}
+
+.exp-trigger__meta {
+  display: flex;
+  align-items: center;
   gap: 24px;
 }
 
-.case-text-title {
-  font-family: "Rubik", sans-serif;
-  font-weight: 600;
-  font-size: 32px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #ffffff;
-  margin: 0 !important;
+.exp-period {
+  font-size: 14px;
+  color: #8e8e93;
+  font-weight: 400;
 }
 
-.case-text-body {
-  font-family: "Rubik", sans-serif;
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0 !important;
-}
-
-.case-text-body p {
-  margin: 0 !important;
-}
-
-/* адаптив для summary */
-@media (max-width: 768px) {
-  .case-summary {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .case-summary-card {
-    height: auto;
-    min-height: 120px;
-  }
-}
-
-.top-button {
-  position: fixed;
-  right: calc((100vw - 1397px) / 2 + 40px);
-  bottom: 40px;
-
-  width: 60px;
-  height: 60px;
-
-  background: rgba(60, 60, 60, 0.87);
-  backdrop-filter: blur(3.32727px);
-  border-radius: 54.5455px;
-  border: none;
-
+.exp-chevron {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f2f2f5;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  cursor: pointer;
-  z-index: 1000;
-  
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  color: #636366;
+  transition: all 0.25s ease;
 }
 
-.top-button-icon {
-  width: 30px;
-  height: 30px;
+.exp-chevron svg {
+  transition: transform 0.25s ease;
 }
 
-.top-button:hover {
-  background: rgba(60, 60, 60, 1);
-  transform: translateY(-2px);
+.exp-item.open .exp-chevron {
+  background-color: #111111;
+  color: #ffffff;
 }
 
-.top-button--visible {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+.exp-item.open .exp-chevron svg {
+  transform: rotate(180deg);
 }
 
-/* MOBILE 390px */
-@media (max-width: 768px) {
-  /* PAGE CONTAINER */
-  .page-container {
-    width: 100%;
-    max-width: 390px;
-    padding: 0 20px;
-    margin: 0 auto;
-  }
-
-  /* HERO */
-  .hero {
-    padding: 96px 0 40px;
-    max-width: 390px;
-    margin: 0 auto;
-  }
-
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    width: 100%;
-  }
-
-  /* Текстовая плашка */
-  .text-card {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    min-height: 320px;
-    padding: 32px 24px;
-    border-radius: 40px;
-    background-size: 20px 20px;
-  }
-
-  /* Заголовок внутри плашки */
-  .title-row {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 4px;
-  }
-
-  .title-first {
-    font-size: 40px;
-    line-height: 1;
-    letter-spacing: -0.01em;
-  }
-
-  .hero-title {
-    font-size: 40px;
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-    margin: 0 0 8px 0;
-  }
-
-  /* Зеленый бейдж "UI/UX" */
-  .badge {
-    width: 90px;
-    height: 38px;
-    border-radius: 38px;
-    font-size: 14px;
-    line-height: 1.1;
-    transform: rotate(8deg) translateY(-4px);
-    box-shadow: 0 0 30px rgba(81, 255, 1, 0.24),
-                inset 0 0 20px rgba(81, 255, 1, 0.2);
-  }
-
-  /* Описание под заголовком */
-  .hero-description {
-    font-size: 16px;
-    line-height: 1.4;
-    max-width: 100%;
-  }
-
-  /* Картинка героя */
-  .hero-image {
-    width: 100%;
-    max-width: 350px;
-    height: 350px;
-    border-radius: 40px;
-    overflow: hidden;
-  }
-
-  .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 40px;
-  }
-
-  /* Секция кейсов */
-  .cases {
-    margin-top: 40px;
-    padding: 0 0 40px;
-    max-width: 390px;
-  }
-
-  .cases-title {
-    font-size: 28px;
-    letter-spacing: 0.05em;
-    margin-bottom: 20px;
-    padding-left: 4px;
-  }
-
-  .cases-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .case-card-inner {
-    max-width: 350px;
-    height: auto;
-    padding: 12px;
-    border-radius: 32px;
-    margin: 0 auto;
-  }
-
-  .case-image-wrap {
-    height: 200px;
-    border-radius: 24px;
-  }
-
-  .case-content {
-    margin-top: 16px;
-    padding: 0 8px 8px;
-  }
-
-  .case-title {
-    font-size: 24px;
-  }
-
-  .case-arrow {
-    width: 28px;
-    height: 28px;
-  }
-
-  .case-text {
-    font-size: 15px;
-    line-height: 1.35;
-  }
-
-  .breadcrumbs {
-    padding: 0;
-    max-width: 350px;
-    margin: 80px auto 12px;
-    gap: 6px;
-  }
-
-  .breadcrumbs-link,
-  .breadcrumbs-separator,
-  .breadcrumbs-current {
-    font-size: 24px;
-  }
-
-  .case-section {
-    max-width: 350px;
-    border-radius: 28px;
-    margin: 0 auto 32px;
-  }
-
-  .case-section--hero {
-    max-width: 350px;
-    height: auto;
-    border-radius: 28px;
-    margin: 12px auto 20px;
-  }
-
-  .case-summary {
-    max-width: 350px;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin: 0 auto 32px;
-    padding: 0;
-  }
-
-  .case-summary-card {
-    height: auto;
-    padding: 16px 20px;
-    border-radius: 24px;
-  }
-
-  .case-summary-title {
-    font-size: 20px;
-    margin-bottom: 4px;
-  }
-
-  .case-summary-text {
-    font-size: 14px;
-  }
-
-  .case-combo {
-    max-width: 350px;
-    margin: 0 auto 32px;
-  }
-
-  .case-text-block {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    margin-bottom: 20px;
-  }
-
-  .case-text-title {
-    font-size: 22px;
-  }
-
-  .case-text-body {
-    font-size: 15px;
-    line-height: 1.45;
-  }
-
-  .case-text-body p {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.80);
-    font-family: "Rubik", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 145.8%;
-  }
-
-  .case-combo .case-section {
-    margin: 0 !important;
-    margin-bottom: 0 !important;
-  }
-
-  .page-yma .case-main .case-section {
-    margin-bottom: 24px;
-  }
-
-  .page-whipcash .case-combo {
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto 20px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .page-whipcash .case-combo .case-text-block {
-    margin: 0;
-  }
-
-  .page-whipcash .case-combo .case-section {
-    margin: 0;
-  }
-
-  .page-whipcash .case-main > .case-section {
-    margin-bottom: 40px;
-  }
-
-  .top-button {
-    position: fixed;
-    right: calc((90vw - 375px) / 2 + 30px);
-    bottom: 40px;
-    width: 50px;
-    height: 50px;
-    background: rgba(60, 60, 60, 0.87);
-    backdrop-filter: blur(3.32727px);
-    border-radius: 54.5455px;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
-  }
-
-  .top-button-icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .top-button:hover {
-    background: rgba(60, 60, 60, 1);
-    transform: translateY(-2px);
-  }
-
-  .top-button--visible {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-  }
-
-  /* WHIPCASH: мобильные версии картинок */
-  .page-whipcash .case-section--whip-1 .case-image {
-    content: url("images/whipcash-1-mobile.png")!important;
-  }
-
-  .page-whipcash .case-section--whip-2 .case-image {
-    content: url("images/whipcash-2-mobile.png")!important;
-  }
-
-  .page-whipcash .case-section--whip-3 .case-image {
-    content: url("images/whipcash-3-mobile.png")!important;
-  }
-
-  .page-whipcash .case-section--whip-4 .case-image {
-    content: url("images/whipcash-4-mobile.png")!important;
-  }
-
-  .page-whipcash .case-section--whip-5 .case-image {
-    content: url("images/whipcash-5-mobile.png")!important;
-  }
-
-  .page-whipcash .case-section--whip-6 .case-image {
-    content: url("images/whipcash-6-mobile.png")!important;
-  }
-
-  .page-whipcash .case-section--whip-7 .case-image {
-    content: url("images/whipcash-7-mobile.png")!important;
-  }
+.exp-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ==================== UNIVERSAL CASE STUDY SYSTEM (Figma Spec) ==================== */
+.exp-item.open .exp-panel {
+  max-height: 520px;
+}
 
-/* 1. Триада параметров сверху */
-.case-summary--triad {
+.exp-panel__inner {
+  padding: 0 0 32px 0;
+}
+
+.exp-content-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 14px;
+}
+
+.exp-bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exp-bullet-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.exp-bullet-list li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: #8e8e93;
+}
+
+/* =========================================================
+   4. СТРАНИЦА КЕЙСА: HERO И МЕТА-ПЛАШКИ (ШВЕЙЦАРСКИЙ СТИЛЬ)
+   ========================================================= */
+.case-page-hero {
+  padding: 70px 0 44px;
+}
+
+.case-page-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.meta-pill {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 450;
+  color: #4e4e52;
+  background-color: #ffffff;
+  border: 1px solid #e8e8ec;
+  border-radius: 9999px; /* Полное идеальное скругление */
+  padding: 8px 18px;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.meta-pill--accent {
+  background-color: #f4f4f6;
+  border-color: #eaeaea;
+  color: #111111;
+  font-weight: 550;
+}
+
+.case-page-hero__title {
+  font-size: clamp(38px, 5.5vw, 56px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+}
+
+.case-page-hero__lead {
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 820px;
+}
+
+.case-stage-full {
+  background-color: var(--bg-surface);
+  background-image: radial-gradient(#dcdcde 1px, transparent 1px);
+  background-size: 16px 16px;
+  border-radius: 28px;
+  padding: 48px 36px;
+  margin-bottom: 64px;
+  border: 1px solid var(--border-light);
+}
+
+.screen-grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  max-width: 1392px;
-  margin: 0 auto 64px;
+  width: 100%;
 }
 
-.case-summary-card--impact .accent-green {
-  color: #39ff14 !important;
-  text-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+.screen-card {
+  aspect-ratio: 9 / 16;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid var(--placeholder-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* 2. Текстовые блоки нарратива (Ограничение по 2-й плашке: 923px) */
-.case-narrative-section {
-  max-width: 1392px;
-  margin: 0 auto 48px;
+.screen-card__placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--text-subtle);
+}
+
+.screen-card__caption {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+/* =========================================================
+   5. ВНУТРЕННИЕ СЕКЦИИ КЕЙСА (МОНОХРОМНАЯ ТИПОГРАФИКА)
+   ========================================================= */
+.case-section {
+  padding: 48px 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.case-section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.case-section-header {
+  margin-bottom: 24px;
+}
+
+.case-section-tag {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  color: #8e8e93;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.case-section-title {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: #111111;
+}
+
+.case-grid-2 {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.case-prose p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+
+.case-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.case-prose strong {
+  color: #111111;
+  font-weight: 600;
+}
+
+.case-sidebar-card {
+  background: #fbfbfb;
+  border: 1px solid #ebebeb;
+  border-radius: 20px;
+  padding: 32px 28px;
+}
+
+.sidebar-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.metrics-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metric-item__num {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -0.02em;
+}
+
+.metric-item__desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.insight-box {
+  background: #f8f8fa;
+  border-left: 3px solid #111111;
+  padding: 22px 26px;
+  border-radius: 0 16px 16px 0;
+  margin: 28px 0;
+}
+
+.insight-box__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.insight-box__text {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #3a3a3c;
+  font-style: normal;
+}
+
+.bullet-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.bullet-points li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.bullet-points li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--text-subtle);
+}
+
+.bullet-points strong {
+  color: var(--text-main);
+}
+
+/* =========================================================
+   6. НАВИГАЦИЯ МЕЖДУ КЕЙСАМИ
+   ========================================================= */
+.case-navigation {
+  padding: 56px 0 24px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link-next {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.nav-link-next__sub {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.nav-link-next__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-main);
+  transition: color 0.15s ease;
+}
+
+.nav-link-next:hover .nav-link-next__title {
+  color: var(--accent-blue);
+}
+
+/* =========================================================
+   7. ПОДВАЛ
+   ========================================================= */
+.footer {
+  width: 100%;
+  border-top: 1px solid #ebebeb;
+  padding: 32px 0 44px;
+  background: #ffffff;
+  margin-top: 40px;
+}
+
+.footer__inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__copy {
+  font-size: 15px;
+  color: #707579;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-link {
+  font-size: 15px;
+  color: #555558;
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  transition: color 0.15s ease;
+}
+
+.footer-link:hover {
+  color: #111111;
+}
+
+/* =========================================================
+   8. АДАПТИВ (MOBILE)
+   ========================================================= */
+@media (max-width: 768px) {
+  .case-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .case-card__details {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .screen-grid-3,
+  .screen-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .case-stage-full,
+  .case-card__stage {
+    padding: 24px 16px;
+  }
+  .exp-trigger {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .exp-trigger__brand {
+    flex-wrap: wrap;
+  }
+  .exp-trigger__meta {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+/* ==========================================================================
+   НОВЫЙ ГЛАВНЫЙ ЭКРАН (СВЕТЛАЯ ТЕМА, CONTAINER 787px ПО FIGMA)
+   Полная защита от браузерного синего цвета и подчеркиваний
+   ========================================================================== */
+
+body.page-home {
+  background-color: #FFFFFF !important;
+  color: #141414 !important;
+  font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Полная нейтрализация синих ссылок и visited */
+.page-home a,
+.page-home a:visited,
+.page-home a:active,
+.page-home a:focus {
+  text-decoration: none !important;
+  color: inherit;
+  outline: none;
+}
+
+/* Центральный контейнер 787px */
+.home-container {
+  width: 100%;
+  max-width: 787px;
+  margin: 0 auto;
+  padding: 40px 0 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* ==================== ХЭДЭР (Frame 2131327997) ==================== */
+/* ==================== ЗАКРЕПЛЕННЫЙ ХЭДЭР С БЛЮРОМ ==================== */
+.home-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  max-width: 787px;
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  box-sizing: border-box;
+
+  /* Эффект матового стекла при скролле: */
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+
+.home-header-name {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.8) !important;
+  letter-spacing: normal;
+}
+
+.home-header-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 82px; /* шаг между ссылками из Figma */
+  height: 53px;
+}
+
+.home-nav-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.8) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.home-nav-item:hover {
+  color: #141414 !important;
+}
+
+/* Языковой переключатель (Language Switcher) */
+.home-lang-switcher {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px; /* gap 8px */
+  padding: 16px 0;
+}
+
+.home-lang-item {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  text-decoration: none !important;
+}
+
+.home-lang-item.active {
+  color: #101214 !important;
+  cursor: default;
+}
+
+.home-lang-item:not(.active) {
+  color: rgba(16, 18, 20, 0.5) !important;
+  transition: color 0.2s ease;
+}
+
+.home-lang-item:not(.active):hover {
+  color: #101214 !important;
+}
+
+.home-lang-separator {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(16, 18, 20, 0.4) !important;
+}
+
+/* ==================== HERO БЛОК С АВАТАРКОЙ (Frame 2131327995) ==================== */
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 622px;
+  gap: 18px; /* отступ от круга аватарки до заголовка */
+}
+
+/* Ellipse 33 */
+.home-avatar-wrap {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #F0F1F3;
+  border: 1px solid rgba(195, 190, 172, 0.25);
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.home-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Frame 2087324847 & 2087324844 */
+.home-hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 622px;
+  gap: 10px; /* отступ между заголовком и подзаголовком */
+}
+
+/* PRODUCT DESIGNER / B2B, SAAS, FINTECH */
+.home-hero-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 595px;
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 71px;
+  color: #141414 !important;
+  text-align: center;
+}
+
+.home-hero-title span {
+  display: block;
+  white-space: nowrap;
+}
+
+/* Описание: Более 6 лет проектирую... */
+.home-hero-desc {
+  width: 100%;
+  max-width: 622px;
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 28px; /* 138.8% */
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 820px) {
+  .home-container {
+    padding: 24px 16px 60px;
+  }
+
+  .home-header {
+    margin-bottom: 40px;
+  }
+
+  .home-header-nav {
+    gap: 24px;
+  }
+
+  .home-avatar-wrap {
+    width: 160px;
+    height: 160px;
+  }
+
+  .home-hero-title {
+    font-size: 34px;
+    line-height: 42px;
+  }
+
+  .home-hero-title span {
+    white-space: normal;
+  }
+
+  .home-hero-desc {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+/* ==================== КАРТОЧКА КЕЙСА WHIPCASH (Frame 2131328003) ==================== */
+.case-preview-card {
+  width: 100%;
+  max-width: 783px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  text-decoration: none !important;
+  color: inherit !important;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.case-preview-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Баннер-контейнер для картинки Whipcash ровно по размерам */
+.case-preview-banner {
+  width: 100%;
+  max-width: 783px;
+  height: 527px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: transparent; /* убрали серую/белую подложку */
+  display: flex;
+}
+
+/* Сама картинка без внешних теней и рамок — встает ровно во весь контейнер */
+.case-preview-mockup {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 24px;
+  display: block;
+  box-shadow: none !important; /* никаких лишних теней */
+  border: none !important;
+  transition: transform 0.3s ease;
+}
+
+.case-preview-card:hover .case-preview-mockup {
+  transform: scale(1.02);
+}
+
+/* Нижний блок с инфой: 2 колонки (Frame 2131328002) */
+.case-preview-info {
+  width: 100%;
+  max-width: 774px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 9px;
+}
+
+/* Левая колонка: Заголовок + Описание + Бейдж (Frame 2131327994) */
+.case-preview-left {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.case-preview-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.case-preview-title {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+  color: #101214 !important;
+  margin: 0;
+}
+
+.case-preview-desc {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px; /* 135% */
+  color: rgba(16, 18, 20, 0.6) !important;
+  margin: 0;
+  max-width: 349px;
+}
+
+/* Бейдж-тег (Frame 2131327993) */
+.case-preview-tag {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  height: 42px;
+  background: #F7F7F7;
+  border: 1px solid rgba(16, 18, 20, 0.2);
+  border-radius: 100px;
+  box-sizing: border-box;
+}
+
+.case-preview-tag span {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(16, 18, 20, 0.6) !important;
+}
+
+/* Правая колонка: Метрики (Frame 2131328001) */
+.case-preview-right {
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+/* Элемент метрики */
+.case-metric-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.case-metric-val {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #101214 !important;
+}
+
+.case-metric-label {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px; /* 125% */
+  color: rgba(16, 18, 20, 0.6) !important;
+}
+
+/* Мобильный адаптив для карточки */
+@media (max-width: 820px) {
+  .case-preview-card {
+    margin-top: 60px;
+    gap: 24px;
+  }
+
+  .case-preview-banner {
+    height: 320px;
+  }
+
+  .case-preview-mockup {
+    width: 90%;
+    height: auto;
+    max-height: 260px;
+  }
+
+  .case-preview-info {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .case-preview-left,
+  .case-preview-right {
+    width: 100%;
+  }
+}
+/* ==========================================================================
+   НОВЫЙ ГЛАВНЫЙ ЭКРАН (СВЕТЛАЯ ТЕМА, CONTAINER 787px ПО FIGMA)
+   Полная защита от браузерного синего цвета и строго выверенный вертикальный ритм
+   ========================================================================== */
+
+body.page-home {
+  background-color: #FFFFFF !important;
+  color: #141414 !important;
+  font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Полная нейтрализация синих ссылок и visited */
+.page-home a,
+.page-home a:visited,
+.page-home a:active,
+.page-home a:focus {
+  text-decoration: none !important;
+  color: inherit !important;
+  outline: none;
+}
+
+/* Центральный контейнер 787px */
+.home-container {
+  width: 100%;
+  max-width: 787px;
+  margin: 0 auto;
+  padding: 40px 0 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* ==================== ХЭДЭР (Frame 2131327997) ==================== */
+.home-header {
+  width: 100%;
+  max-width: 787px;
+  height: 53px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  box-sizing: border-box;
+}
+
+.home-header-name {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.8) !important;
+  letter-spacing: normal;
+}
+
+.home-header-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 82px;
+  height: 53px;
+}
+
+.home-nav-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.8) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.home-nav-item:hover {
+  color: #101214 !important;
+}
+
+/* Языковой переключатель */
+.home-lang-switcher {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 0;
+}
+
+.home-lang-item {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  text-decoration: none !important;
+}
+
+.home-lang-item.active {
+  color: #101214 !important;
+  cursor: default;
+}
+
+.home-lang-item:not(.active) {
+  color: rgba(16, 18, 20, 0.5) !important;
+  transition: color 0.2s ease;
+}
+
+.home-lang-item:not(.active):hover {
+  color: #101214 !important;
+}
+
+.home-lang-separator {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(16, 18, 20, 0.4) !important;
+}
+
+/* ==================== HERO БЛОК (Frame 2131327995) ==================== */
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 622px;
+  gap: 18px;
+}
+
+.home-avatar-wrap {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #F0F1F3;
+  border: 1px solid rgba(195, 190, 172, 0.25);
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.home-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.home-hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 622px;
+  gap: 10px;
+}
+
+.home-hero-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 595px;
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 71px;
+  color: #141414 !important;
+  text-align: center;
+}
+
+.home-hero-title span {
+  display: block;
+  white-space: nowrap;
+}
+
+.home-hero-desc {
+  width: 100%;
+  max-width: 622px;
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* ==================== СПИСОК КЕЙСОВ (ВЕРТИКАЛЬНЫЙ РИТМ) ==================== */
+/* Ровно 100px от Hero блока */
+.case-preview-list {
+  width: 100%;
+  max-width: 783px;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 60px !important; /* ровно 60px между кейсами */
+  margin-top: 100px !important; /* ровно 100px от первого блока */
+  margin-bottom: 0 !important;
+}
+
+/* Сама карточка кейса */
+.case-preview-card {
+  width: 100%;
+  max-width: 783px;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 32px !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.case-preview-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Баннер под изображение кейса (783x527px) */
+.case-preview-banner {
+  width: 100%;
+  max-width: 783px;
+  height: 527px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: transparent;
+  display: flex;
+}
+
+.case-preview-mockup {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 24px;
+  display: block;
+  box-shadow: none !important;
+  border: none !important;
+  transition: transform 0.3s ease;
+}
+
+.case-preview-card:hover .case-preview-mockup {
+  transform: scale(1.02);
+}
+
+/* Двухколоночный инфо-блок под баннером */
+.case-preview-info {
+  width: 100%;
+  max-width: 774px;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 9px;
+}
+
+.case-preview-left {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.case-preview-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.case-preview-title {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+  color: #101214 !important;
+  margin: 0;
+}
+
+.case-preview-desc {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(16, 18, 20, 0.6) !important;
+  margin: 0;
+  max-width: 364px;
+}
+
+.case-preview-tag {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  height: 42px;
+  background: #F7F7F7;
+  border: 1px solid rgba(16, 18, 20, 0.2);
+  border-radius: 100px;
+  box-sizing: border-box;
+}
+
+.case-preview-tag span {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(16, 18, 20, 0.6) !important;
+  white-space: nowrap;
+}
+
+.case-preview-right {
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.case-metric-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.case-metric-val {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #101214 !important;
+}
+
+.case-metric-label {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: rgba(16, 18, 20, 0.6) !important;
+}
+
+/* ==================== БЛОК ОПЫТА РАБОТЫ ==================== */
+/* Ровно 100px после блока кейсов */
+.experience-section {
+  width: 100%;
+  max-width: 783px;
+  margin-top: 100px !important;
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 
-.narrative-block {
-  max-width: 860px;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.narrative-title {
+.experience-title {
   font-family: 'Rubik', sans-serif;
+  font-weight: 500;
   font-size: 32px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 16px;
-  color: #ffffff;
-}
-
-.narrative-subtitle {
-  font-family: 'Rubik', sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: #ffffff;
-}
-
-.narrative-lead {
-  font-family: 'Rubik', sans-serif;
-  font-size: 20px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 923px;
-}
-
-.narrative-body p {
-  font-family: 'Rubik', sans-serif;
-  font-size: 20px;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.75);
-  margin-bottom: 12px;
-  max-width: 923px;
-}
-
-.narrative-body p:last-child {
-  margin-bottom: 0;
-}
-
-.narrative-body p strong {
-  color: #ffffff;
-  font-weight: 600;
-}
-
-/* 3. Нижний контейнер (923px Hug Container) */
-.case-bottom-container {
-  max-width: 1392px;
-  margin: 0 auto 120px;
-}
-
-.case-bottom-content {
-  max-width: 923px;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-/* 3.1. Метрики / Достижения */
-.case-metrics-grid {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-  padding: 32px 0 40px;
-  margin-bottom: 0px;
-}
-
-.metric-col {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  flex: 1 0 0;
-}
-
-.metric-number {
-  font-family: 'Rubik', sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #ffffff;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-}
-
-.metric-desc {
-  color: rgba(255, 255, 255, 0.70);
-  font-family: 'Rubik', sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 138.8%;
+  line-height: 38px;
+  color: #101214 !important;
   margin: 0;
 }
 
-/* 3.2. Retrospective */
-.case-retrospective {
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
-  background: #242424;
-  border-radius: 40px;
-  padding: 48px 56px;
-  margin-bottom: 60px;
-  box-sizing: border-box;
-  background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(29, 29, 29, 0.8) 19px, rgba(29, 29, 29, 0.8) 21px),
-    repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(29, 29, 29, 0.8) 19px, rgba(29, 29, 29, 0.8) 21px);
-  background-size: 20px 20px;
 }
 
-.retrospective-title {
-  font-family: 'Rubik', sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin-bottom: 28px;
-  color: #ffffff;
-}
-
-.retrospective-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
-.retrospective-col {
+.experience-item {
+  width: 100%;
+  border-bottom: 1px solid rgba(16, 18, 20, 0.12);
+  padding-bottom: 24px;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.retrospective-text {
-  color: rgba(255, 255, 255, 0.70);
-  font-family: 'Rubik', sans-serif;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 138.8%;
-  margin: 0;
+.experience-item:last-child {
+  border-bottom: none;
 }
 
-/* 3.3. Карточки навигации между кейсами */
-.case-nav-footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  width: 100%;
-}
-
-.case-nav-card {
-  height: 124px;
-  background: #242424;
-  border-radius: 32px;
-  padding: 24px 32px;
+.experience-item-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  text-decoration: none;
-  color: #ffffff;
-  box-sizing: border-box;
-  background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(29, 29, 29, 0.8) 19px, rgba(29, 29, 29, 0.8) 21px),
-    repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(29, 29, 29, 0.8) 19px, rgba(29, 29, 29, 0.8) 21px);
-  background-size: 20px 20px;
-  
-  /* Базовое состояние: прозрачная тонкая граница 1.5px */
-  border: 1.5px solid rgba(255, 255, 255, 0.08);
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+  align-items: baseline;
+  width: 100%;
 }
 
-/* При наведении: убираем черную тень, зажигаем неоновый контур */
-.case-nav-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(81, 255, 1, 0.6);
-  box-shadow: 0 0 24px rgba(81, 255, 1, 0.15), inset 0 0 12px rgba(81, 255, 1, 0.05);
-  background-color: #282828;
+.experience-role {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  color: #101214;
 }
 
-
-/* Иконка стрелочки 40px */
-.case-nav-arrow {
-  width: 40px;
-  height: 40px;
-  display: block;
-  flex-shrink: 0;
-  transition: transform 0.25s ease;
+.experience-period {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(16, 18, 20, 0.45);
 }
 
-/* PREVIOUS: стрелка смотрит влево */
-.case-nav-card.prev .case-nav-arrow {
-  transform: rotate(-135deg);
+.experience-company {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(16, 18, 20, 0.65);
 }
 
-.case-nav-card.prev:hover .case-nav-arrow {
-  transform: rotate(-135deg) translateY(4px);
+.experience-desc {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(16, 18, 20, 0.8);
+  margin: 0;
 }
 
-/* NEXT: стрелка смотрит вправо */
-.case-nav-card.next .case-nav-arrow {
-  transform: rotate(45deg);
+/* ==========================================================================
+   МОБИЛЬНЫЙ АДАПТИВ (СТРОГО ПО КАНОНУ CASE-WHIPCASH / ДО 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+  /* 1. Контейнер страницы */
+  .home-container {
+    padding: 16px 16px 60px !important;
+    max-width: 100% !important;
+  }
+
+  /* 2. Шапка: компактная, не наезжает на чёлку, сохраняет блюр */
+  .home-header {
+    height: 56px !important;
+    margin-bottom: 32px !important;
+    padding: 0 4px !important;
+  }
+
+  .home-header-name {
+    font-size: 15px !important;
+    line-height: 18px !important;
+  }
+
+  .home-header-nav {
+    gap: 16px !important;
+  }
+
+  .home-nav-item,
+  .home-lang-item {
+    font-size: 14px !important;
+  }
+
+  /* 3. Hero-блок */
+  .home-hero {
+    gap: 16px !important;
+  }
+
+  .home-avatar-wrap {
+    width: 140px !important;
+    height: 140px !important;
+  }
+
+  .home-hero-text {
+    gap: 8px !important;
+  }
+
+  .home-hero-title {
+    font-size: 32px !important;
+    line-height: 38px !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .home-hero-title span {
+    white-space: normal !important;
+  }
+
+  .home-hero-desc {
+    font-size: 15px !important;
+    line-height: 22px !important;
+    padding: 0 8px;
+  }
+
+  /* 4. Список кейсов: отступ 60px от Hero, 40px между карточками */
+  .case-preview-list {
+    margin-top: 60px !important;
+    gap: 40px !important;
+    width: 100% !important;
+  }
+
+  .case-preview-card {
+    gap: 20px !important;
+  }
+
+  /* Высота баннера под мобильный экран (пропорция ~16:10 без кропа) */
+  .case-preview-banner {
+    height: 220px !important;
+    border-radius: 18px !important;
+  }
+
+  .case-preview-mockup {
+    border-radius: 18px !important;
+  }
+
+  /* Перестроение инфо-блока карточки в 1 колонку */
+  .case-preview-info {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .case-preview-left,
+  .case-preview-right {
+    width: 100% !important;
+  }
+
+  .case-preview-left {
+    gap: 14px !important;
+  }
+
+  .case-preview-title {
+    font-size: 24px !important;
+    line-height: 28px !important;
+  }
+
+  .case-preview-desc {
+    font-size: 15px !important;
+    line-height: 21px !important;
+  }
+
+  .case-preview-tag {
+    height: 36px !important;
+    padding: 6px 14px !important;
+  }
+
+  .case-preview-tag span {
+    font-size: 13px !important;
+  }
+
+  .case-preview-right {
+    gap: 12px !important;
+  }
+
+  .case-metric-val {
+    font-size: 16px !important;
+    line-height: 20px !important;
+  }
+
+  .case-metric-label {
+    font-size: 14px !important;
+    line-height: 19px !important;
+  }
+
+  /* 5. Блок опыта работы */
+  .experience-section {
+    margin-top: 60px !important;
+    gap: 24px !important;
+  }
+
+  .experience-title {
+    font-size: 24px !important;
+    line-height: 28px !important;
+  }
+
+  .experience-list {
+    gap: 16px !important;
+  }
+
+  .experience-item {
+    padding-bottom: 20px !important;
+    gap: 8px !important;
+  }
+
+  .experience-item-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+  }
+
+  .experience-role {
+    font-size: 17px !important;
+    line-height: 22px !important;
+  }
+
+  .experience-period {
+    font-size: 13px !important;
+    line-height: 16px !important;
+  }
+
+  .experience-company {
+    font-size: 14px !important;
+    line-height: 18px !important;
+  }
+
+  .experience-desc {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+}
+/* ==================== ВОЗДУХ И РОВНЫЕ ОТСТУПЫ МЕЖДУ КЕЙСАМИ ==================== */
+.case-preview-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 96px !important; /* Большой благородный воздух между кейсами */
+  margin-top: 80px !important;
 }
 
-.case-nav-card.next:hover .case-nav-arrow {
-  transform: rotate(45deg) translateY(-4px);
+.case-preview-card {
+  gap: 32px !important; /* Ровный отступ от картинки до текста */
 }
 
-/* Текстовые метки */
-.nav-card-meta {
+.case-preview-info {
+  gap: 40px !important; /* Одинаковое расстояние между левой и правой колонками */
+}
+
+.case-preview-left {
+  gap: 20px !important; /* Ровный шаг внутри левой колонки */
+}
+
+.case-preview-right {
+  gap: 20px !important; /* Ровный шаг между пунктами достижений */
+}
+
+.case-metric-item {
+  gap: 6px !important; /* Ровный шаг между цифрой и подписью */
+}
+
+@media (max-width: 820px) {
+  .case-preview-list {
+    gap: 60px !important; /* На смартфонах отступ чуть компактнее */
+    margin-top: 40px !important;
+  }
+  .case-preview-info {
+    gap: 28px !important;
+  }
+}
+/* ==================== ЕДИНЫЙ ШРИФТ ДЛЯ ЗАГОЛОВКА НА ГЛАВНОЙ ==================== */
+.home-hero-title {
+  font-family: var(--font-sans) !important; /* Тот самый Inter со страниц кейсов */
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.08 !important;
+  color: #111111 !important;
+}
+/* =========================================================
+   ЕДИНАЯ ДИЗАЙН-СИСТЕМА: КОНТЕЙНЕР, ШАПКА И ТЕГИ
+   ========================================================= */
+
+/* 1. Единая ширина контента на всех страницах (787px, как на главной) */
+.container,
+.main-content .container {
+  max-width: 787px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* 2. Шапка на внутренних страницах — точная копия главной */
+.header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  width: 100% !important;
+  height: 64px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.header__inner {
+  max-width: 787px !important;
+  width: 100% !important;
+  height: 64px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Ссылка назад в стиле левого блока шапки */
+.header__back-link {
+  font-family: 'Rubik', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 15px !important;
+  line-height: 21px !important;
+  color: rgba(0, 0, 0, 0.8) !important;
+  text-decoration: none !important;
+  letter-spacing: normal !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: color 0.2s ease !important;
+}
+
+.header__back-link:hover {
+  color: #101214 !important;
+}
+
+/* Навигация справа — капс, аккуратный кернинг */
+.header__nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 32px !important;
+}
+
+.header__nav .nav-item {
+  font-family: 'Rubik', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+  color: rgba(0, 0, 0, 0.8) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.header__nav .nav-item:hover {
+  color: #101214 !important;
+}
+
+/* 3. Единый стиль тегов (Бейджей) по всему сайту */
+.meta-pill,
+.case-preview-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 38px !important;
+  padding: 8px 16px !important;
+  background: #F7F7F7 !important;
+  border: 1px solid rgba(16, 18, 20, 0.15) !important;
+  border-radius: 100px !important;
+  font-family: 'Rubik', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  color: rgba(16, 18, 20, 0.7) !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
+}
+
+.meta-pill--accent {
+  background: #111111 !important;
+  border-color: #111111 !important;
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+/* =========================================================
+   КАРТОЧКА NDA КЕЙСА (ОТЧЕТЫ / LEGACY DECOMPOSITION)
+   ========================================================= */
+.case-preview-banner--nda {
+  background-color: #F0F1F3 !important;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 24px;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-.case-nav-card.prev .nav-card-meta {
-  text-align: right;
-  align-items: flex-end;
+.case-nda-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  max-width: 440px;
 }
 
-.case-nav-card.next .nav-card-meta {
-  text-align: left;
-  align-items: flex-start;
-}
-
-.nav-card-title {
+.case-nda-badge {
   font-family: 'Rubik', sans-serif;
-  font-size: 28px;
+  font-size: 52px;
   font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.12em;
+  color: #c4c7cc; /* чуть более серый цвет на фоне #F0F1F3 */
+  line-height: 1;
   text-transform: uppercase;
-  color: #ffffff;
 }
 
-.nav-card-subtitle {
+.case-nda-caption {
   font-family: 'Rubik', sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
-  line-height: 1.2;
-  color: rgba(255, 255, 255, 0.50);
+  line-height: 22px;
+  color: #707579;
+  margin: 0;
 }
 
-/* Адаптив для планшетов и мобильных */
-@media (max-width: 768px) {
-  .case-summary--triad,
-  .case-metrics-grid,
-  .retrospective-grid,
-  .case-nav-footer {
-    grid-template-columns: 1fr;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .case-retrospective {
-    padding: 24px;
-    border-radius: 24px;
-  }
-
-  .retrospective-title {
-    font-size: 24px;
-  }
-
-  .retrospective-text {
-    font-size: 18px;
-  }
-
-  .metric-number {
-    font-size: 26px;
-  }
-
-  .metric-desc {
-    font-size: 16px;
-  }
-
-  .case-nav-card {
-    height: auto;
-    padding: 20px 24px;
-    border-radius: 24px;
-  }
-
-  .nav-card-title {
-    font-size: 22px;
-  }
-
-  .nav-card-subtitle {
-    font-size: 16px;
-  }
+.case-nda-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #e1e3e6;
+  border-radius: 999px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
-/* ==================== ТОЧЕЧНЫЕ ПРАВКИ ДЛЯ КЕЙСОВ НА МОБИЛКЕ ==================== */
-@media (max-width: 768px) {
-
-  /* 1. Обложка внутренней страницы проекта: 350px на 220px */
-  .case-section--hero {
-    width: 100%;
-    max-width: 350px !important;
-    height: 220px !important;
-    border-radius: 28px !important;
-    margin: 12px auto 24px !important;
-    overflow: hidden !important;
-  }
-
-  .case-section--hero img,
-  .case-hero-image {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center !important;
-    display: block !important;
-  }
-
-  /* 2. Заголовки вдоль текста внутри кейсов: 20px */
-  .narrative-title,
-  .narrative-subtitle,
-  .case-text-title {
-    font-size: 20px !important;
-    line-height: 1.25 !important;
-    margin-bottom: 12px !important;
-  }
-
-  /* 3. Основной текст внутри кейсов: 16px */
-  .narrative-lead,
-  .narrative-body p,
-  .case-text-body,
-  .case-text-body p {
-    font-size: 16px !important;
-    line-height: 1.5 !important;
-  }
-
-  /* 4. Ограничение ширины текстовых блоков под мобильный экран */
-  .case-narrative-section,
-  .narrative-block,
-  .case-combo,
-  .case-text-block {
-    max-width: 350px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
+.case-nda-btn:hover {
+  background: #1a1a1a;
+  color: #ffffff;
+  border-color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-/* ==================== ТОЛЬКО МОБИЛЬНАЯ ВЕРСИЯ (ДО 768px) ==================== */
-@media (max-width: 768px) {
-  
-  /* Карточки со статистикой вверху кейса */
-  .case-summary,
-  .case-summary--triad {
-    max-width: 350px !important;
-    margin: 0 auto 24px !important; /* Умеренный отступ снизу до текста */
-    gap: 12px !important;           /* Равномерный шаг между карточками */
-    padding: 0 !important;
-  }
-
-  .case-summary-card {
-    height: auto !important;
-    min-height: auto !important;
-    padding: 16px 20px !important;  /* Одинаковые симметричные отступы внутри */
-    border-radius: 20px !important;
-    justify-content: center !important;
-  }
-
-  .case-summary-title {
-    font-size: 18px !important;
-    margin-top: 0 !important;
-    margin-bottom: 4px !important;
-    line-height: 1.15 !important;
-  }
-
-  .case-summary-text {
-    font-size: 13px !important;
-    margin: 0 !important;
-    line-height: 1.2 !important;
-  }
-    /* Превью кейсов на главной (330px на 180px) */
-  .case-card-inner {
-    width: 100%;
-    max-width: 350px !important;
-    height: auto !important;
-    padding: 10px !important;
-    border-radius: 28px !important;
-    margin: 0 auto !important;
-    box-sizing: border-box !important;
-  }
-
-  .case-image-wrap {
-    width: 330px !important;
-    max-width: 100% !important;
-    height: 180px !important;
-    border-radius: 20px !important;
-    margin: 0 auto !important;
-    overflow: hidden !important;
-    background-color: #181818 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .case-image-wrap .case-image {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center !important;
-  }
-
+.case-nda-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #e1e3e6;
+  border-radius: 999px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
+
+/* Полная четкая инверсия при наведении: черный фон, белый текст и белая стрелочка */
+.case-nda-btn:hover {
+  background: #1a1a1a !important;
+  color: #ffffff !important;
+  border-color: #1a1a1a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.case-nda-btn:hover span {
+  color: #ffffff !important;
+}
+
+.case-nda-btn:hover svg {
+  stroke: #ffffff !important;
+}
+/* =========================================================
+   ФУТЕР НА ГЛАВНОЙ — ДОПОЛНИТЕЛЬНЫЙ ВОЗДУХ ПОСЛЕ ПОСЛЕДНЕГО КЕЙСА
+   ========================================================= */
+.page-home .footer {
+  margin-top: 96px;
+}
+/* =========================================================
+   НЕАКТИВНЫЙ ENG + ДЕЛИКАТНЫЙ TOOLTIP
+   ========================================================= */
+.home-lang-item--disabled {
+  position: relative;
+  color: rgba(16, 18, 20, 0.42) !important;
+  cursor: default;
+  user-select: none;
+}
+
+.home-lang-item--disabled:hover {
+  color: #101214 !important;
+}
+
+.home-lang-tooltip {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 10px);
+  transform: translateX(-50%) translateY(4px);
+  white-space: nowrap;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(16, 18, 20, 0.08);
+  box-shadow: 0 10px 30px rgba(16, 18, 20, 0.08);
+  font-family: 'Rubik', sans-serif;
+  font-size: 13px;
+  line-height: 16px;
+  color: #555558;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+  z-index: 50;
+}
+
+.home-lang-item--disabled:hover .home-lang-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+

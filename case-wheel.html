@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>WHEEL — Мобильный сервис для велосипедистов и городских служб Санкт-Петербурга</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rubik:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ==================== ЗАКРЕПЛЕННАЯ ШАПКА ==================== -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__back-link">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+          <path d="M10 13L5 8L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        НА ГЛАВНУЮ
+      </a>
+
+      <nav class="header__nav">
+        <a href="CV.pdf" target="_blank" rel="noopener noreferrer" class="nav-item">CV</a>
+
+        <a href="https://t.me/zickzackk" target="_blank" class="nav-item">TG</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+
+      <!-- ==================== HERO КЕЙСА ==================== -->
+      <section class="case-page-hero">
+        <div class="case-page-hero__meta">
+          <span class="meta-pill meta-pill--accent">Solo Senior Product Designer</span>
+          <span class="meta-pill">Urban Mobility / GovTech</span>
+          <span class="meta-pill">iOS & Android (Flutter)</span>
+          <span class="meta-pill">Санкт-Петербург</span>
+        </div>
+
+        <h1 class="case-page-hero__title">WHEEL — Мобильный сервис для велосипедистов и городских служб Санкт-Петербурга</h1>
+        <p class="case-page-hero__lead">
+          Проектирование сервиса городской микромобильности: от единоразовой калибровки велосипеда и алгоритмического подбора треков до ненавязчивого сбора аналитики городской среды для Комитета по транспорту.
+        </p>
+      </section>
+
+      <!-- ==================== БЛОК 1: ТРИПТИХ ОСНОВНОГО ФЛОУ ==================== -->
+      <section class="case-section case-visual-block" style="margin-bottom: 48px;">
+        <div style="width: 100%; border-radius: 20px; overflow: hidden; background: #ffffff; border: 1px solid #f0f0f0;">
+          <img src="images/wheel-after.jpg" alt="Сквозной сценарий Wheel: калибровка сетапа, алгоритмический подбор и навигация в движении" style="width: 100%; height: auto; display: block; border-radius: 20px;">
+        </div>
+        <p style="text-align: center; font-size: 15px; line-height: 22px; color: #707579; margin-top: 16px;">
+          Сквозной сценарий взаимодействия: калибровка типа байка ➔ алгоритмический подбор сценариев поездки ➔ безопасный кокпит навигации в движении.
+        </p>
+      </section>
+
+      <!-- ==================== ДЕКОМПОЗИЦИЯ СЦЕНАРИЯ НА 3 ШАГА ==================== -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-tag">User Flow / Архитектура взаимодействия</span>
+          <h2 class="case-section-title">Три шага взаимодействия: от калибровки до движения</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 32px;">
+
+          <!-- ШАГ 1 -->
+          <div class="case-card" style="padding: 24px;">
+            <span class="meta-pill meta-pill--accent" style="margin-bottom: 12px; display: inline-block;">Шаг 1 • Калибровка</span>
+            <h3 style="font-size: 18px; font-weight: 700; line-height: 24px; margin-bottom: 8px; color: #1a1a1a;">
+              Выбор типа велосипеда
+            </h3>
+            <p style="font-size: 14px; line-height: 21px; color: #555;">
+              Единоразовая настройка в один клик (Road, Gravel, City, MTB). Алгоритм запоминает геометрию колес и физические ограничения транспорта, отсекая 80% нерелевантной дорожной сети.
+            </p>
+          </div>
+
+          <!-- ШАГ 2 -->
+          <div class="case-card" style="padding: 24px;">
+            <span class="meta-pill meta-pill--accent" style="margin-bottom: 12px; display: inline-block;">Шаг 2 • Подбор</span>
+            <h3 style="font-size: 18px; font-weight: 700; line-height: 24px; margin-bottom: 8px; color: #1a1a1a;">
+              Карта и умные карточки
+            </h3>
+            <p style="font-size: 14px; line-height: 21px; color: #555;">
+              Вместо абстрактного поиска — готовые алгоритмические пресеты в верхней части экрана («Безопасный маршрут», «Парки и гравий», «Быстрый темп») с прозрачной разбивкой покрытия.
+            </p>
+          </div>
+
+          <!-- ШАГ 3 -->
+          <div class="case-card" style="padding: 24px;">
+            <span class="meta-pill meta-pill--accent" style="margin-bottom: 12px; display: inline-block;">Шаг 3 • Движение</span>
+            <h3 style="font-size: 18px; font-weight: 700; line-height: 24px; margin-bottom: 8px; color: #1a1a1a;">
+              Кокпит в движении
+            </h3>
+            <p style="font-size: 14px; line-height: 21px; color: #555;">
+              Safety-First навигация: считываемость за 0.5 секунды при вибрации руля, высококонтрастная нитка трека, увеличенные тач-таргеты (56 pt) и защита от случайных нажатий.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== БЛОК 2: GOVTECH И ЛИЧНЫЙ КАБИНЕТ (WHEEL-AFTER3) ==================== -->
+      <section class="case-section" style="margin-top: 56px;">
+        <div class="case-section-header">
+          <span class="case-section-tag">GovTech & Data Collection</span>
+          <h2 class="case-section-title">Личный кабинет: сохраненные треки и городские опросы</h2>
+        </div>
+
+        <div class="case-visual-block" style="margin: 28px 0 32px;">
+          <div style="width: 100%; border-radius: 20px; overflow: hidden; background: #ffffff; border: 1px solid #f0f0f0;">
+            <img src="images/wheel-after3.jpg" alt="Личный кабинет Wheel: записанные треки и опросы для Комитета по транспорту" style="width: 100%; height: auto; display: block; border-radius: 20px;" onerror="this.src='images/wheel-after3.png';">
+          </div>
+          <p style="text-align: center; font-size: 15px; line-height: 22px; color: #707579; margin-top: 16px;">
+            Личный кабинет пользователя: история записанных маршрутов, агрегированная телеметрия и добровольные опросы о городской велоинфраструктуре.
+          </p>
+        </div>
+
+        <div class="case-grid-2">
+          <div class="case-prose">
+            <h3 style="font-size: 20px; font-weight: 700; line-height: 26px; margin-bottom: 12px; color: #1a1a1a;">
+              Сбор верифицированных данных без трения
+            </h3>
+            <p>
+              Для проектирования новых велодорожек Комитету по транспорту Санкт-Петербурга требовались достоверные данные о «болевых точках» города: разбитых участках, опасных перекрестках и нехватке велопарковок.
+            </p>
+            <p>
+              Мы полностью исключили поп-апы во время заезда (принцип Zero-Interruption Safety). Вместо этого опросные карточки органично появляются в профиле райдера после успешного завершения маршрута, когда человек готов уделить 30 секунд обратной связи.
+            </p>
+          </div>
+
+          <div class="case-sidebar-card">
+            <h3 class="sidebar-title">Ключевые метрики проекта:</h3>
+            <ul class="metrics-list">
+              <li class="metric-item">
+                <span class="metric-item__num">100%</span>
+                <span class="metric-item__desc">Успешное согласование архитектуры с Комитетом по транспорту</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-item__num">78%</span>
+                <span class="metric-item__desc">Конверсия в прохождение опросов из личного кабинета</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-item__num">+64%</span>
+                <span class="metric-item__desc">Рост доверия к построенным маршрутам после внедрения калибровки</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== БЛОК 3: ДИЗАЙН-СИСТЕМА И UI KIT (WHEEL-AFTER4) ==================== -->
+      <section class="case-section" style="margin-top: 56px;">
+        <div class="case-section-header">
+          <span class="case-section-tag">Design System & Guidelines</span>
+          <h2 class="case-section-title">Компонентная база и UI Kit сервиса</h2>
+        </div>
+
+        <div class="case-visual-block" style="margin: 28px 0 32px;">
+          <div style="width: 100%; border-radius: 20px; overflow: hidden; background: #ffffff; border: 1px solid #f0f0f0;">
+            <img src="images/wheel-after4.jpg" alt="UI Kit сервиса Wheel: компоненты, иконки, карточки телеметрии и типографика" style="width: 100%; height: auto; display: block; border-radius: 20px;" onerror="this.src='images/wheel-after4.png';">
+          </div>
+          <p style="text-align: center; font-size: 15px; line-height: 22px; color: #707579; margin-top: 16px;">
+            Дизайн-система Wheel: модульная компонентная база, адаптированная под мобильную разработку на Flutter и стандарты доступности WCAG AAA.
+          </p>
+        </div>
+
+        <div class="case-grid-2">
+          <div class="case-prose">
+            <h3 style="font-size: 20px; font-weight: 700; line-height: 26px; margin-bottom: 12px; color: #1a1a1a;">
+              Системные правила доступности в уличной среде
+            </h3>
+            <p>
+              Интерфейс мобильного велоприложения живет в экстремальных условиях: яркие солнечные блики, тряска руля, мокрые экраны и перчатки. Каждый компонент UI Kit спроектирован с учетом этих ограничений:
+            </p>
+            <ul class="bullet-points">
+              <li><strong>Тач-таргеты 56×56 pt:</strong> увеличенные области нажатия для кнопок паузы, финиша и переключения слоев.</li>
+              <li><strong>Контрастность WCAG AAA:</strong> ключевые информационные плашки и текст сохраняют читаемость при прямом солнечном свете.</li>
+              <li><strong>Семантическая цветовая кодировка:</strong> строгая дифференциация типов покрытия (зеленый — выделенные велополосы, оранжевый — плотный грунт, красный — зоны ремонта и опасные перекрестки).</li>
+            </ul>
+          </div>
+
+          <div class="case-sidebar-card">
+            <h3 class="sidebar-title">Эргономический фокус:</h3>
+            <ul class="metrics-list">
+              <li class="metric-item">
+                <span class="metric-item__num">0.5 сек</span>
+                <span class="metric-item__desc">Время полного считывания HUD-панели на руле</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-item__num">-42%</span>
+                <span class="metric-item__desc">Снижение времени отвлечения взгляда райдера от дороги</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-item__num">100%</span>
+                <span class="metric-item__desc">Покрытие состояний компонентов в Auto Layout</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== НАВИГАЦИЯ К СЛЕДУЮЩЕМУ КЕЙСУ ==================== -->
+      <div class="case-navigation">
+        <a href="index.html" class="header__back-link">← Все проекты</a>
+        <a href="case-whipcash.html" class="nav-link-next">
+          <span class="nav-link-next__sub">Следующий кейс</span>
+          <span class="nav-link-next__title">Whipcash: B2B Marketplace & Escrow →</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ==================== ПОДВАЛ ==================== -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__copy">© 2026 Мария Мочалова</div>
+                <nav class="footer__links">
+          <a href="https://t.me/zickzackk" target="_blank" class="footer-link">Telegram</a>
+          <a href="mailto:gubris851@gmail.com" class="footer-link">Email</a>
+          <a href="CV.pdf" target="_blank" rel="noopener noreferrer" class="footer-link">Резюме (PDF)</a>
+
+
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>

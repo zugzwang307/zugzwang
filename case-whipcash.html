@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Whipcash — Compliant B2B Marketplace & Escrow Platform</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+   <!-- ==================== ЗАКРЕПЛЕННАЯ ШАПКА ==================== -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__back-link">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+          <path d="M10 13L5 8L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        НА ГЛАВНУЮ
+      </a>
+
+      <nav class="header__nav">
+        <a href="CV.pdf" target="_blank" rel="noopener noreferrer" class="nav-item">CV</a>
+
+        <a href="https://t.me/zickzackk" target="_blank" class="nav-item">TG</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="main-content">
+    <div class="container">
+
+      <!-- ==================== HERO КЕЙСА ==================== -->
+      <section class="case-page-hero">
+        <div class="case-page-hero__meta">
+          <span class="meta-pill meta-pill--accent">Solo Senior Product Designer</span>
+          <span class="meta-pill">Regulated B2B / FinTech Escrow</span>
+          <span class="meta-pill">Web Platform (Desktop & Tablet)</span>
+          <span class="meta-pill">California, US (2024)</span>
+        </div>
+
+        <h1 class="case-page-hero__title">Whipcash — Проектирование B2B-платформы безопасных сделок на регулируемом рынке Калифорнии</h1>
+        <p class="case-page-hero__lead">
+          Смена парадигмы в оптовых закупках: замена громоздких анкет с десятками полей на визуальный конструктор заявок, прозрачный сбор предложений от поставщиков и автоматизацию эскроу-расчетов для трех ролей.
+        </p>
+      </section>
+
+      <!-- ==================== 1. ПРОБЛЕМА И КОНКУРЕНТЫ ==================== -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-tag">01 / Контекст и ограничения</span>
+          <h2 class="case-section-title">Перегруженные формы и отсутствие визуальной информации о товаре</h2>
+        </div>
+
+        <!-- САМОСТОЯТЕЛЬНЫЙ БЛОК: ЭКРАН «ДО» С ПОДПИСЬЮ СРАЗУ ПОСЛЕ ЗАГОЛОВКА -->
+        <div class="case-visual-block" style="margin: 28px 0 44px;">
+          <div style="width: 100%; border-radius: 20px; overflow: hidden; background: #ffffff;">
+            <img src="images/whipcash-before.jpg" alt="Интерфейс конкурентов ДО: перегруженная анкета" style="width: 100%; height: auto; display: block; border-radius: 20px;">
+          </div>
+          <p style="text-align: center; font-size: 15px; line-height: 22px; color: #707579; margin-top: 16px;">
+            Интерфейс конкурентов: оформление оптовой закупки больше напоминало подачу заявки на ипотеку — полотна дропдаунов, покупка вслепую по сухим кодам и ноль визуальных параметров сырья.
+          </p>
+        </div>
+
+        <div class="case-grid-2">
+          <div class="case-prose">
+            <p>
+              Оптовый оборот в Калифорнии строго регулируется: федеральные ограничения исключают карточный эквайринг, а каждая сделка требует обязательного юридического аудита и участия лицензированного эскроу-менеджера. Существующие платформы на рынке строились по принципу тяжелых учетных систем, где оформление заказа требовало заполнения длинных списков вложенных меню.
+            </p>
+            <p>
+              Основное интерфейсное трение заключалось в том, что закупщик не видел ключевых параметров партии: сорт (Strain), содержание активных веществ (THC/CBD) и терпеновый профиль были скрыты за регуляторными артикулами. После отправки формы статус заявки оставался неизвестным, а уточнение деталей требовало ручной переписки и звонков.
+            </p>
+          </div>
+
+          <div class="case-sidebar-card">
+            <h3 class="sidebar-title">Ограничения старых решений:</h3>
+            <ul class="metrics-list">
+              <li class="metric-item">
+                <span class="metric-item__num">Слепой выбор</span>
+                <span class="metric-item__desc">Покупка по текстовым кодам классификаторов без визуальных характеристик</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-item__num">15+ минут</span>
+                <span class="metric-item__desc">Ручное заполнение юридических реквизитов и лицензий при каждом заказе</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-item__num">Непрозрачность</span>
+                <span class="metric-item__desc">Отсутствие обратной связи о готовности поставщиков взять заказ в работу</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 2. АРХИТЕКТУРА И 3 СУЩНОСТИ ==================== -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-tag">02 / Системная модель</span>
+          <h2 class="case-section-title">Синхронизация покупателя, продавца и эскроу-менеджера</h2>
+        </div>
+
+        <div class="case-prose">
+          <p>
+            Чтобы исключить лишние звенья коммуникации, процесс был декомпозирован на три связанных интерфейса с единым жизненным циклом сделки:
+          </p>
+          <ul class="bullet-points">
+            <li><strong>Покупатель:</strong> создает запрос с параметрами нужной партии, видит отклики от проверенных поставщиков и подтверждает получение товара кодом верификации.</li>
+            <li><strong>Продавец:</strong> получает структурированные заявки из общего пула, отправляет условия поставки и видит подтвержденное депонирование средств перед отправкой партии.</li>
+            <li><strong>Эскроу-менеджер:</strong> контролирует соответствие лицензий законодательству штата, фиксирует средства на счете платформы и выпускает оплату после приемки.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==================== 3. ЭТАПЫ РЕШЕНИЯ (3 ЭКРАНА С ПОДПИСЯМИ) ==================== -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-tag">03 / Проектирование ключевых экранов</span>
+          <h2 class="case-section-title">Последовательность сценария: от запроса до выбора поставщика</h2>
+        </div>
+
+        <!-- ЭКРАН 1: СОЗДАНИЕ РЕКВЕСТА -->
+        <div class="case-visual-block" style="margin: 36px 0 60px;">
+          <div style="width: 100%; border-radius: 20px; overflow: hidden; background: #ffffff;">
+            <img src="images/whipcash-after-1.jpg" alt="Экран 1: Конструктор заявки" style="width: 100%; height: auto; display: block; border-radius: 20px;">
+          </div>
+          <p style="text-align: center; font-size: 15px; line-height: 22px; color: #707579; margin-top: 16px;">
+            Экран 01. Конструктор заявки: наглядный выбор сорта, отображение ключевых характеристик и исключение повторного ввода лицензий.
+          </p>
+        </div>
+
+        <!-- ЭКРАН 2: ВИД СОЗДАННОЙ ЗАЯВКИ В ЛК -->
+        <div class="case-visual-block" style="margin: 36px 0 60px;">
+          <div style="width: 100%; border-radius: 20px; overflow: hidden; background: #ffffff;">
+            <img src="images/whipcash-after-2.jpg" alt="Экран 2: Карточка активной заявки" style="width: 100%; height: auto; display: block; border-radius: 20px;">
+          </div>
+          <p style="text-align: center; font-size: 15px; line-height: 22px; color: #707579; margin-top: 16px;">
+            Экран 02. Карточка заявки в личном кабинете: фиксация параметров заказа и статус публикации.
+          </p>
+        </div>
+
+        <!-- ЭКРАН 3: ПОСТУПИВШИЕ ПРЕДЛОЖЕНИЯ -->
+        <div class="case-visual-block" style="margin: 36px 0 60px;">
+          <div style="width: 100%; border-radius: 20px; overflow: hidden; background: #ffffff;">
+            <img src="images/whipcash-after-3.jpg" alt="Экран 3: Список предложений от продавцов" style="width: 100%; height: auto; display: block; border-radius: 20px;">
+          </div>
+          <p style="text-align: center; font-size: 15px; line-height: 22px; color: #707579; margin-top: 16px;">
+            Экран 03. Список предложений: сравнение условий от лицензированных поставщиков и переход к защищенной эскроу-сделке.
+          </p>
+        </div>
+
+        <!-- РЕЗУЛЬТАТЫ ДЛЯ БИЗНЕСА -->
+        <div class="case-grid-2" style="margin-top: 48px;">
+          <div class="case-prose">
+            <p>
+              Новая структура сценария сократила операционные затраты на ручную обработку входящих обращений и позволила участникам рынка взаимодействовать без риска потери средств.
+            </p>
+            <p>
+              Платформа объединила разрозненные юридические и логистические этапы в понятный последовательный процесс с прозрачной фиксацией ответственности сторон.
+            </p>
+          </div>
+
+          <div class="case-sidebar-card">
+            <h3 class="sidebar-title">Результаты проекта:</h3>
+            <ul class="metrics-list">
+              <li class="metric-item">
+                <span class="metric-item__num">90 сек</span>
+                <span class="metric-item__desc">Время формирования заявки вместо длительного заполнения форм</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-item__num">3 роли</span>
+                <span class="metric-item__desc">Синхронная работа покупателя, поставщика и менеджера платформы</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-item__num">100% Cashless</span>
+                <span class="metric-item__desc">Полный уход от рискованного наличного расчета при передаче партий</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== НАВИГАЦИЯ К СЛЕДУЮЩЕМУ КЕЙСУ ==================== -->
+      <div class="case-navigation">
+        <a href="index.html" class="header__back-link">← Все проекты</a>
+        <a href="case-snt.html" class="nav-link-next">
+          <span class="nav-link-next__sub">Следующий кейс</span>
+          <span class="nav-link-next__title">СНТ.Онлайн: FinTech &amp; GovTech →</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ==================== ПОДВАЛ ==================== -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__copy">© 2026 Мария Мочалова</div>
+                <nav class="footer__links">
+          <a href="https://t.me/zickzackk" target="_blank" class="footer-link">Telegram</a>
+          <a href="mailto:gubris851@gmail.com" class="footer-link">Email</a>
+          <a href="CV.pdf" target="_blank" rel="noopener noreferrer" class="footer-link">Резюме (PDF)</a>
+
+        </nav>
+
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>
