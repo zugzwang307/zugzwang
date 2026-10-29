@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B2B Reporting System — Мария Мочалова</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Чистые стили для картинок без рамок и черных полос */
+    .zoomable-image-container {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      border: none !important;
+      background: transparent !important;
+      cursor: zoom-in;
+      margin-bottom: 8px;
+    }
+    .zoomable-image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+    .image-flow-caption {
+      margin-top: 8px;
+      margin-bottom: 48px;
+      padding-left: 2px;
+    }
+    .image-flow-caption p {
+      margin: 6px 0 0 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #4b5563;
+    }
+
+    /* Просмотрщик во весь экран (Lightbox) */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.94);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      box-sizing: border-box;
+      cursor: zoom-out;
+    }
+    .lightbox-modal img {
+      max-width: 95%;
+      max-height: 95%;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+      animation: lightboxFadeIn 0.2s ease-out;
+    }
+    @keyframes lightboxFadeIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Шапка -->
+<header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__back-link">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+          <path d="M10 13L5 8L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        НА ГЛАВНУЮ
+      </a>
+
+      <nav class="header__nav">
+        <a href="CV.pdf" target="_blank" rel="noopener noreferrer" class="nav-item">CV</a>
+
+        <a href="https://t.me/zickzackk" target="_blank" class="nav-item">TG</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Hero кейса -->
+      <section class="case-page-hero">
+        <div class="case-page-hero__meta">
+          <span class="meta-pill meta-pill--accent">Solo Senior Product Designer</span>
+          <span class="meta-pill">Enterprise B2B / Analytics</span>
+          <span class="meta-pill">Web Platform</span>
+        </div>
+
+        <h1 class="case-page-hero__title">B2B-отчеты: как я избавила бухгалтеров от 15 минут ожидания</h1>
+        <p class="case-page-hero__lead">
+          История о том, как одна старая кнопка заставляла людей уходить пить чай, пока база данных мучительно собирала файл. Я пересобрала логику выгрузок: разделила данные по типам, договорилась с разработчиками о безопасной схеме работы и защитила пользователей от ошибок при скачивании.
+        </p>
+      </section>
+
+      <!-- 1. Проблема: Как это было -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-tag">01 / Проблема и интервью</span>
+          <h2 class="case-section-title">Кнопка, за которой уходили пить чай</h2>
+        </div>
+
+        <div class="case-grid-2">
+          <div class="case-prose">
+            <p>
+              В системе годами жила одна кнопка для выгрузки. Когда сервис только запускался и записей было мало, она работала быстро. Но со временем пользователей стало в разы больше, данных прибавилось, и формирование отчета превратилось в пытку.
+            </p>
+            <p>
+              Самое интересное, что в поддержку никто особо не жаловался. Бухгалтеры просто привыкли: нажимали на кнопку, блокировали страницу и буквально уходили пить чай на 10–15 минут.
+            </p>
+            <p>
+              Я пошла общаться с ними напрямую и быстро выяснила забавную вещь: <strong>из всей огромной простыни данных им в 90% случаев нужны были ровно 2 конкретные строчки</strong>. А весь остальной многостраничный файл скачивался впустую и просто не читался.
+            </p>
+          </div>
+
+          <div class="case-sidebar-card">
+            <h3 class="sidebar-title">С чем мы жили:</h3>
+            <ul class="metrics-list">
+              <li class="metric-item">
+                <span class="metric-item__num">15 минут</span>
+                <span class="metric-item__desc">Люди просто ждали, пока сервер соберет файл</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-item__num">1 кнопка</span>
+                <span class="metric-item__desc">Тяжелый запрос, который выгружал всю базу целиком</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-item__num">2 строчки</span>
+                <span class="metric-item__desc">Реальная польза, ради которой всё это затевалось</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Картинка ДО -->
+        <div class="zoomable-image-container" style="margin-top: 32px;">
+          <img src="images/report-before.jpg" alt="Старая выгрузка с жестким выбором" onerror="handleImgError(this)">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">Было: ложный выбор из двух вариантов</span>
+          <p>
+            Старое окно предлагало выгрузить данные либо за квартал, либо за весь год сразу. Выбрать конкретную неделю или нужную программу было нельзя. Чтобы посмотреть успеваемость одного отдела, приходилось выгружать сотни тысяч строк и вручную чистить файл в Excel.
+          </p>
+        </div>
+      </section>
+
+      <!-- 2. Решение: Что получилось в итоге -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-tag">02 / Решение и структура</span>
+          <h2 class="case-section-title">Разделение отчетов по смыслу и логика работы</h2>
+        </div>
+
+        <div class="case-prose" style="margin-bottom: 24px;">
+          <p>
+            Я разделила выгрузку по типам: <strong>Программы • Сотрудники • Группы • Вопросы • Уволенные</strong>. Теперь система запрашивает у базы только то, что реально нужно человеку прямо сейчас, не перегружая сервер.
+          </p>
+        </div>
+
+        <!-- Экран ПОСЛЕ -->
+        <div class="zoomable-image-container">
+          <img src="images/report-after.jpg" alt="Новый интерфейс детальных отчетов" onerror="handleImgError(this)">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">Стало: понятная таблица и быстрый экспорт</span>
+          <p>
+            Появилась нормальная панель фильтров, таблица с понятным статусом успеваемости и возможность быстро сохранить нужный срез в Excel прямо из рабочего экрана.
+          </p>
+        </div>
+
+        <!-- Скриншот со структурой и мыслями -->
+        <div class="zoomable-image-container">
+          <img src="images/report-structure.png " alt="Схема структуры и мысли по логике" onerror="handleImgError(this)">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">Мои заметки и схема логики до отрисовки</span>
+          <p>
+            Так я на старте набросала для команды связи между типами данных, ограничения бэкенда и сценарии поведения кнопок, чтобы согласовать логику с разработчиками до того, как собирать чистовые макеты.
+          </p>
+        </div>
+      </section>
+
+      <!-- 3. Блок 1: Первый вход -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-tag">03 / Сценарий: Вход в отчеты</span>
+          <h2 class="case-section-title">Сразу показываем данные, а не пустой экран</h2>
+        </div>
+
+        <div class="case-prose" style="margin-bottom: 24px;">
+          <p>
+            Мне хотелось, чтобы человек не тратил время на предварительные клики. Когда бухгалтер открывает вкладку, система сама подставляет самый частый сценарий:
+          </p>
+        </div>
+
+        <div class="zoomable-image-container">
+          <img src="images/flow-default-1.jpg" alt="Вход по умолчанию на По сотрудникам" onerror="handleImgError(this)">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">01. Данные за текущий месяц загружаются сами</span>
+          <p>
+            По умолчанию открывается срез «По сотрудникам» за последние 30 дней. Кнопка скачивания уже активна: если нужен стандартный отчет, его можно забрать буквально за один клик.
+          </p>
+        </div>
+
+        <div class="zoomable-image-container">
+          <img src="images/flow-default-2.png" alt="Скелетон во время загрузки" onerror="handleImgError(this)">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">02. Спокойная подгрузка без дергания интерфейса</span>
+          <p>
+            Пока данные подтягиваются, таблица не прыгает и не мигает. Скелетоны держат форму колонок, сохраняя привычный каркас страницы.
+          </p>
+        </div>
+      </section>
+
+      <!-- 4. Блок 2: Смена фильтров и компромисс с разработчиками -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-tag">04 / Сценарий: Смена фильтров</span>
+          <h2 class="case-section-title">Поиск компромиссов</h2>
+        </div>
+
+        <div class="case-prose" style="margin-bottom: 24px;">
+          <p>
+            Изначально я утвердила с разработчиками динамическую подгрузку на лету: кликнул на фильтр — таблица сразу сама обновилась. Но когда половина макетов уже была готова, ребята из бэкенда пришли и честно сказали: база такой поток параллельных запросов просто не потянет.
+          </p>
+          <p>
+            Я не стала упираться и перестроила логику: добавила явную кнопку «Найти», но сделала так, чтобы человек физически не мог ошибиться и скачать старый файл:
+          </p>
+        </div>
+
+        <div class="zoomable-image-container">
+          <img src="images/flow-filters-1.jpg" alt="Календарь с пресетами" onerror="handleImgError(this)">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">01. Календарь с быстрыми пресетами</span>
+          <p>
+            В шапку календаря я вынесла частые периоды («Последние 7 дней», «30 дней», «Полгода»), а внизу оставила выбор произвольных дат. Кнопка «Применить» фиксирует выбор в селекте.
+          </p>
+        </div>
+
+        <div class="zoomable-image-container">
+          <img src="images/flow-filters-2.jpg" alt="Блокировка кнопки скачивания" onerror="handleImgError(this)">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">02. Защита: нельзя скачать то, чего еще нет на экране</span>
+          <p>
+            Если даты в календаре поменяли, а кнопку «Найти» еще не нажали, в таблице всё еще висит старый контент. В этот момент я блокирую кнопку скачивания: по наведению всплывает подсказка «Сначала выберите данные и нажмите «Найти»». Это спасает от путаницы в отчетах.
+          </p>
+        </div>
+
+        <div class="zoomable-image-container">
+          <img src="images/flow-filters-3.jpg" alt="Выгрузка формируется и отмена" onerror="handleImgError(this)">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">03. Возможность отменить зависший процесс</span>
+          <p>
+            Пока файл генерируется, кнопка превращается в крутилку. Если человек передумал или выбрал не то, он может нажать на нее и спокойно отменить выгрузку через всплывающее окно, не дожидаясь конца.
+          </p>
+        </div>
+      </section>
+
+      <!-- 5. Блок 3: Ошибки -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-tag">05 / Ошибки и крайние случаи</span>
+          <h2 class="case-section-title">Человечные подсказки вместо белого экрана</h2>
+        </div>
+
+        <div class="case-prose" style="margin-bottom: 24px;">
+          <p>
+            Интерфейс не должен падать с молчаливой ошибкой 500. Если что-то пошло не так, пользователю нужно сразу понятно объяснить, что произошло и как это починить:
+          </p>
+        </div>
+
+        <div class="zoomable-image-container">
+          <img src="images/flow-error-limit.jpg" alt="Превышен лимит данных" onerror="handleImgError(this)">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">01. Запросили слишком много данных</span>
+          <p>
+            Если запросить массив за три года, сервер не зависнет наглухо. Всплывет окно с человеческой подсказкой: «Превышен лимит данных. Уменьшите диапазон дат или измените фильтры» и кнопкой, которая сразу открывает календарь.
+          </p>
+        </div>
+
+        <div class="zoomable-image-container">
+          <img src="images/flow-error-system.jpg" alt="Системный сбой и кнопка повтора" onerror="handleImgError(this)">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">02. Сбой сети: повторить в один клик</span>
+          <p>
+            Если отвалился интернет или моргнул сервер, кнопка показывает значок ошибки. Человек нажимает «Попробовать еще раз», и запрос уходит снова — без необходимости заново нащелкивать все фильтры.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. Результаты -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-tag">06 / Итоги</span>
+          <h2 class="case-section-title">Что это дало людям и бизнесу</h2>
+        </div>
+
+        <div class="case-grid-2">
+          <div class="case-prose">
+            <p>
+              Вместо нервной рутины с ожиданием у кофемашины бухгалтеры получили инструмент, который выдает нужные цифры за пару секунд.
+            </p>
+            <p>
+              А команда бэкенда вздохнула с облегчением: вместо гигантских запросов, подвешивавших базу данных, сервер стал получать легкие точечные задачи.
+            </p>
+          </div>
+
+          <div class="case-sidebar-card">
+            <h3 class="sidebar-title">Результаты:</h3>
+            <ul class="metrics-list">
+              <li class="metric-item">
+                <span class="metric-item__num">2 секунды</span>
+                <span class="metric-item__desc">Вместо 15 минут ожидания перед экраном</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-item__num">0 ошибок</span>
+                <span class="metric-item__desc">Нельзя случайно скачать не те данные</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-item__num">-60%</span>
+                <span class="metric-item__desc">Снижение пиковой нагрузки на базу данных</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Feedback продакт-менеджера -->
+      <section class="case-section" style="margin-top: 56px;">
+        <div class="case-section-header">
+          <span class="case-section-tag">Feedback / Команда</span>
+          <h2 class="case-section-title">Как мы сработались с продактом</h2>
+        </div>
+
+        <div class="case-prose" style="margin-bottom: 24px;">
+          <p>
+            В сложных B2B-задачах мне важно не просто отрисовать экраны по ТЗ, а глубоко вникнуть в проблему, снять с продакта головную боль и довести всё до продакшена вместе с разработчиками. Финал релиза этого направления:
+          </p>
+        </div>
+
+        <div class="zoomable-image-container" style="border-radius: 20px; margin-bottom: 64px;">
+          <img 
+            src="images/pm-feedback.jpg" 
+            alt="Отзыв продакт-менеджера"
+            onerror="handleImgError(this)"
+          >
+        </div>
+      </section>
+
+      <!-- Навигация -->
+      <div class="case-navigation">
+        <a href="index.html" class="header__back-link">← Все проекты</a>
+        <a href="case-whipcash.html" class="nav-link-next">
+          <span class="nav-link-next__sub">Следующий кейс</span>
+          <span class="nav-link-next__title">Whipcash: FinTech & Escrow Platform →</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Подвал -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__copy">© 2026 Мария Мочалова</div>
+        <nav class="footer__links">
+          <a href="https://t.me/zickzackk" target="_blank" class="footer-link">Telegram</a>
+          <a href="mailto:gubris851@gmail.com" class="footer-link">Email</a>
+          <a href="https://github.com/zugzwang307" target="_blank" class="footer-link">GitHub</a>
+          <a href="Mochalova-Mariia-Iurevna-2.pdf" download class="footer-link">Резюме (PDF)</a>
+        </nav>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Модальное окно Lightbox -->
+  <div id="lightbox" class="lightbox-modal">
+    <img id="lightbox-img" src="" alt="Enlarged preview">
+  </div>
+
+  <script>
+    function handleImgError(image) {
+      if (!image.dataset.tried) {
+        image.dataset.tried = "png";
+        image.src = image.src.replace(/\.(jpg|jpeg|png)$/i, '.png');
+      } else if (image.dataset.tried === "png") {
+        image.dataset.tried = "jpeg";
+        image.src = image.src.replace(/\.(jpg|jpeg|png)$/i, '.jpeg');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('lightbox');
+      const modalImg = document.getElementById('lightbox-img');
+      const containers = document.querySelectorAll('.zoomable-image-container');
+
+      containers.forEach(container => {
+        container.addEventListener('click', () => {
+          const img = container.querySelector('img');
+          if (img && img.src) {
+            modalImg.src = img.src;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      });
+
+      modal.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+          modal.style.display = 'none';
+          document.body.style.overflow = '';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

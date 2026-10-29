@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skinity — Мария Мочалова</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Стили для открывающихся картинок */
+    .zoomable-image-container {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      border: none !important;
+      background: transparent !important;
+      cursor: zoom-in;
+      margin-bottom: 8px;
+    }
+    .zoomable-image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+    .image-flow-caption {
+      margin-top: 8px;
+      margin-bottom: 48px;
+      padding-left: 2px;
+    }
+    .image-flow-caption p {
+      margin: 6px 0 0 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #4b5563;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Шапка -->
+   <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__back-link">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+          <path d="M10 13L5 8L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        НА ГЛАВНУЮ
+      </a>
+
+      <nav class="header__nav">
+        <a href="CV.pdf" target="_blank" rel="noopener noreferrer" class="nav-item">CV</a>
+
+        <a href="https://t.me/zickzackk" target="_blank" class="nav-item">TG</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Hero кейса -->
+      <section class="case-page-hero">
+        <div class="case-page-hero__meta">
+          <span class="meta-pill meta-pill--accent">Solo Senior Product Designer</span>
+          <span class="meta-pill">iGaming & E-Commerce</span>
+          <span class="meta-pill">Gamification & Mechanics</span>
+          <span class="meta-pill">Web Platform (Desktop & Mobile)</span>
+        </div>
+
+        <h1 class="case-page-hero__title">Skinity: геймификация кейсов, контрактов и апгрейдов скинов</h1>
+        <p class="case-page-hero__lead">
+          Проектирование платформы открытия кейсов и кастомизации: как я адаптировала сложные игровые механики под мобильные экраны, внедрила прогресс-бары для многошаговых открытий и перевела референс часов Омнитрикса в функциональный UI.
+        </p>
+      </section>
+
+      <!-- 1. Блок: Комбо-кейсы (Десктоп vs Мобилка) -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-tag">01 / Мобильная адаптация</span>
+          <h2 class="case-section-title">Комбо-кейсы: адаптация батареи открытий под мобилку</h2>
+        </div>
+
+        <div class="case-grid-2">
+          <div class="case-prose">
+            <p>
+              На десктопе комбо-кейсы жили отлично: широкий экран позволял легко разместить всю батарею кейсов в ряд, и человек сразу видел весь процесс открытия от начала до конца.
+            </p>
+            <p>
+              Но когда дело дошло до мобилки, возникла проблема: на маленьком экране невозможно уместить горизонтальную батарею так, чтобы не превратить интерфейс в нечитаемую кашу. 
+            </p>
+            <p>
+              Чтобы человек не терялся и понимал, на каком он этапе, я добавила сверху понятный <strong>прогресс-бар</strong>. При открытии кейсов контейнеры со скинами динамически подтягиваются снизу вверх, а полоска вверху наглядно показывает, сколько шагов еще осталось до финала.
+            </p>
+          </div>
+
+          <div class="case-sidebar-card">
+            <h3 class="sidebar-title">Логика комбо:</h3>
+            <ul class="metrics-list">
+              <li class="metric-item">
+                <span class="metric-item__num">Progress Bar</span>
+                <span class="metric-item__desc">Понятный статус шагов на узком мобильном экране</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-item__num">Bottom-up</span>
+                <span class="metric-item__desc">Динамическая подтяжка выпавших скинов снизу вверх</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Десктоп комбо -->
+        <div class="zoomable-image-container" style="margin-top: 32px;">
+          <img src="images/skinity-combodesktop.jpg" alt="Комбо-кейсы на десктопе" onerror="this.onerror=null; this.src='images/skinity-combodesktop.png';">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">Десктоп: горизонтальная батарея кейсов</span>
+          <p>
+            На широком экране все слоты открытия видны одновременно, сохраняя полный контекст комбо-сессии.
+          </p>
+        </div>
+
+        <!-- Мобилка комбо -->
+        <div class="zoomable-image-container">
+          <img src="images/skinity-combomob.jpg" alt="Комбо-кейсы на мобилке с прогресс-баром" onerror="this.onerror=null; this.src='images/skinity-combomob.png';">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">Мобильная версия: вертикальная динамика и прогресс-бар</span>
+          <p>
+            Вверху закреплен индикатор этапа открытия, а выпадающие скины плавно подтягиваются снизу экрана, не перегружая пальцевую зону.
+          </p>
+        </div>
+      </section>
+
+      <!-- 2. Блок: Механика Апгрейда и Омнитрикс -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-tag">02 / Геймификация и референсы</span>
+          <h2 class="case-section-title">Механика апгрейда: от часов Омнитрикса к рабочему интерфейсу</h2>
+        </div>
+
+        <div class="case-prose" style="margin-bottom: 24px;">
+          <p>
+            Заказчик пришел с необычным запросом: он хотел, чтобы экран апгрейда скинов визуально напоминал часы Омнитрикс из мультфильма «Бен-10». 
+          </p>
+          <p>
+            Я пошла изучать референсы, разобрала круговой циферблат и свечение оригинальных часов и переосмыслила их под строгий темный стиль нашего продукта. В итоге получился круговой механизм шанса, где четко считываются состояния успеха и неудачи:
+          </p>
+        </div>
+
+        <!-- Референс Омнитрикса -->
+        <div class="zoomable-image-container">
+          <img src="images/omnitrix.jpg" alt="Референс: часы Омнитрикс из Бен-10" onerror="this.onerror=null; this.src='images/omnitrix.png';">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">Референс от заказчика: часы Омнитрикс</span>
+          <p>
+            Оригинальная идея циферблата с поворотным кольцом выбора и световой индикацией готовности.
+          </p>
+        </div>
+
+        <!-- Экран выбора апгрейда -->
+        <div class="zoomable-image-container">
+          <img src="images/skinity-upgrade.jpg" alt="Экран настройки апгрейда скина" onerror="this.onerror=null; this.src='images/skinity-upgrade.png';">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">01. Выбор скина и расчет коэффициента шанса</span>
+          <p>
+            Круговой радиальный селектор: игрок выбирает исходный предмет и целевой скин, а стрелка наглядно отмеряет сектор вероятности успеха.
+          </p>
+        </div>
+
+        <!-- Успешный апгрейд -->
+        <div class="zoomable-image-container">
+          <img src="images/skinity-success.jpg" alt="Успешный апгрейд скина" onerror="this.onerror=null; this.src='images/skinity-success.png';">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">02. Состояние успеха (Success State)</span>
+          <p>
+            Стрелка останавливается в победном секторе: акцентная анимация свечения и карточка полученного редкого скина.
+          </p>
+        </div>
+
+        <!-- Неудачный апгрейд -->
+        <div class="zoomable-image-container">
+          <img src="images/skinity-fail.jpg" alt="Неудачный апгрейд скина" onerror="this.onerror=null; this.src='images/skinity-fail.png';">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">03. Состояние неудачи (Fail State)</span>
+          <p>
+            Стрелка уходит в серый сектор: интерфейс деликатно сообщает о проигрыше предмета и предлагает кнопку быстрого повтора или выбора нового скина.
+          </p>
+        </div>
+      </section>
+
+      <!-- 3. Блок: VIP-режим -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-tag">03 / Дополнительный функционал</span>
+          <h2 class="case-section-title">VIP-режим: преемственность айдентики</h2>
+        </div>
+
+        <div class="case-prose" style="margin-bottom: 24px;">
+          <p>
+            Для пользователей с VIP-статусом требовалось выделить специальный режим эксклюзивных кейсов. Чтобы сохранить преемственность бренда, я нарисовала фирменную иконку VIP-режима, аккуратно зарифмовав ее с геометрией основного логотипа сервиса.
+          </p>
+        </div>
+
+        <!-- VIP экран (десктоп + моб) -->
+        <div class="zoomable-image-container">
+          <img src="images/skinity-vip.jpg" alt="VIP режим на десктопе и мобилке" onerror="this.onerror=null; this.src='images/skinity-vip.png';">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">VIP-раздел: адаптив под десктоп и мобильные устройства</span>
+          <p>
+            Премиальная темная цветовая гамма, акцентный бейдж и золотые акценты, органично встроенные в общую дизайн-систему.
+          </p>
+        </div>
+      </section>
+
+      <!-- 4. Блок: Механика Контрактов (3 экрана) -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <span class="case-section-tag">04 / Механика обмена</span>
+          <h2 class="case-section-title">Контракты: обмен 10 скинов на один редкий</h2>
+        </div>
+
+        <div class="case-prose" style="margin-bottom: 24px;">
+          <p>
+            Контракты позволяют игрокам сдать накопившийся дроп в обмен на один случайный предмет более высокого качества. Я разложила этот сценарий на три понятных шага:
+          </p>
+        </div>
+
+        <!-- Контракт 1: Выбор -->
+        <div class="zoomable-image-container">
+          <img src="images/skinity-contract-1.jpg" alt="Шаг 1: Выбор предметов для контракта" onerror="this.onerror=null; this.src='images/skinity-contract-1.png';">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">01. Выбор скинов для контракта</span>
+          <p>
+            Инвентарь с быстрым чеклистом: пользователь заполняет слоты контракта (от 3 до 10 скинов), видя суммарную стоимость и возможный диапазон выигрыша.
+          </p>
+        </div>
+
+        <!-- Контракт 2: Процесс -->
+        <div class="zoomable-image-container">
+          <img src="images/skinity-contract-2.jpg" alt="Шаг 2: Процесс подписания контракта" onerror="this.onerror=null; this.src='images/skinity-contract-2.png';">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">02. Процесс генерации и подписание</span>
+          <p>
+            Интерактивный экран «подписания»: визуальный эффект смешивания предметов с нарастанием интриги перед финальным выпадением.
+          </p>
+        </div>
+
+        <!-- Контракт 3: Результат -->
+        <div class="zoomable-image-container">
+          <img src="images/skinity-contract-3.jpg" alt="Шаг 3: Полученный результат контракта" onerror="this.onerror=null; this.src='images/skinity-contract-3.png';">
+        </div>
+        <div class="image-flow-caption">
+          <span class="case-section-tag" style="display: block; margin-bottom: 4px;">03. Финальный результат</span>
+          <p>
+            Карточка полученного ценного скина с моментальным выбором: забрать предмет в инвентарь или сразу отправить в новый контракт.
+          </p>
+        </div>
+      </section>
+
+      <!-- Навигация -->
+      <div class="case-navigation">
+        <a href="index.html" class="header__back-link">← Все проекты</a>
+        <a href="case-wheel.html" class="nav-link-next">
+          <span class="nav-link-next__sub">Следующий кейс</span>
+          <span class="nav-link-next__title">Wheel: Urban Mobility / GovTech →</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Подвал -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__copy">© 2026 Мария Мочалова</div>
+        <nav class="footer__links">
+          <a href="https://t.me/zickzackk" target="_blank" class="footer-link">Telegram</a>
+          <a href="mailto:gubris851@gmail.com" class="footer-link">Email</a>
+          <a href="https://github.com/zugzwang307" target="_blank" class="footer-link">GitHub</a>
+          <a href="Mochalova-Mariia-Iurevna-2.pdf" download class="footer-link">Резюме (PDF)</a>
+        </nav>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Подключение единого скрипта зума картинок -->
+  <script src="lightbox.js"></script>
+
+</body>
+</html>
